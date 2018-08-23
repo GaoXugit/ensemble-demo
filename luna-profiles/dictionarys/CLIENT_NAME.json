@@ -1,0 +1,9 @@
+{
+	"code":"CLIENT_NAME",
+	"comment":"客户名称（英）",
+	"dataType":"Varchar",
+	"id":"f66953b66fa0466bb11a7603b9db8268",
+	"lengths":100,
+	"precision":0,
+	"valid":true
+}

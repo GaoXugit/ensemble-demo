@@ -1,0 +1,9 @@
+{
+	"code":"STATE_LOC",
+	"comment":"省、州",
+	"dataType":"Varchar",
+	"id":"b4192c8a3cac4b49acc05641709be5f3",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

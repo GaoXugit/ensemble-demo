@@ -1,0 +1,9 @@
+{
+	"code":"FLOW_TYPE",
+	"comment":"流程类型 01-服务流程；02-事件流程",
+	"dataType":"Varchar",
+	"id":"4aa4e7a6547041309b43a738b9b7fad9",
+	"lengths":2,
+	"precision":0,
+	"valid":true
+}

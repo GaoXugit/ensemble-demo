@@ -1,0 +1,9 @@
+{
+	"code":"USER_ID",
+	"comment":"开户柜员ID",
+	"dataType":"Varchar",
+	"id":"e6ed2c921deb42d68c5faa7839fbe076",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

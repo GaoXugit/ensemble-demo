@@ -1,0 +1,9 @@
+{
+	"code":"FROM_NODE",
+	"comment":"源节点",
+	"dataType":"Varchar",
+	"id":"e21513da2468473ea399cd5c3315be09",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

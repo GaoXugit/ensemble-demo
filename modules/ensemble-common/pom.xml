@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dcits.ensemble.demo</groupId>
+        <artifactId>ensemble-demo</artifactId>
+        <version>1.5.3-SNAPSHOT</version>
+        <relativePath>../../</relativePath>
+    </parent>
+    <artifactId>ensemble-common</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-business-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-business-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-business-sequences</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-dtp-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-dtp-db</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

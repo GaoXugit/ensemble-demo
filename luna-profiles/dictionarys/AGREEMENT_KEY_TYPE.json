@@ -1,0 +1,9 @@
+{
+	"code":"AGREEMENT_KEY_TYPE",
+	"comment":"协议键类型：\r\n            \tIK:INTERNAL_KEY\r\n            \tCN:CLIENT_NO",
+	"dataType":"Varchar",
+	"id":"e411f9cb9fa7429da00501cb3736aa6e",
+	"lengths":3,
+	"precision":0,
+	"valid":true
+}

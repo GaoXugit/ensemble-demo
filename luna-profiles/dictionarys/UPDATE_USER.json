@@ -1,0 +1,9 @@
+{
+	"code":"UPDATE_USER",
+	"comment":"更新用户",
+	"dataType":"Varchar",
+	"id":"81930c0166f94e7ab0c519a51a414b6c",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

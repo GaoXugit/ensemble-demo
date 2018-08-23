@@ -1,0 +1,32 @@
+[
+	{
+		"comment":"查询服务",
+		"id":"d4681c94de2643f5ae23882a71f838e2",
+		"name":"1400",
+		"valid":true
+	},
+	{
+		"comment":"金融服务",
+		"id":"c858c12b33e845c6a34901acb068bbfc",
+		"name":"1000",
+		"valid":true
+	},
+	{
+		"comment":"非金融服务",
+		"id":"724083830bcd4ee988292a1d08b0ee82",
+		"name":"1200",
+		"valid":true
+	},
+	{
+		"comment":"冲正服务",
+		"id":"b6cd1dbe57054acb8d8830340a698bb9",
+		"name":"1300",
+		"valid":true
+	},
+	{
+		"comment":"文件服务",
+		"id":"7efbf07bffb8438ebeee8ac3e53fa058",
+		"name":"1220",
+		"valid":true
+	}
+]

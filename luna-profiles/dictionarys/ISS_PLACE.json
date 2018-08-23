@@ -1,0 +1,9 @@
+{
+	"code":"ISS_PLACE",
+	"comment":"签发地",
+	"dataType":"Varchar",
+	"id":"4c09e7ad19d44f3b8a52b01651c38c95",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

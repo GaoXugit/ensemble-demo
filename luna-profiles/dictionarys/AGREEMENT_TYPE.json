@@ -1,0 +1,9 @@
+{
+	"code":"AGREEMENT_TYPE",
+	"comment":"协议类型\r\n            LOA 贷款协议\r\n            ",
+	"dataType":"Varchar",
+	"id":"51cc6fc16b5d4a3695a6b1821d8e2e59",
+	"lengths":3,
+	"precision":0,
+	"valid":true
+}

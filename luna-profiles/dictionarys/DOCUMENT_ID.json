@@ -1,0 +1,9 @@
+{
+	"code":"DOCUMENT_ID",
+	"comment":"证件号码",
+	"dataType":"Varchar",
+	"id":"0ece236f86464dfea29c0c250ab9bf6d",
+	"lengths":25,
+	"precision":0,
+	"valid":true
+}

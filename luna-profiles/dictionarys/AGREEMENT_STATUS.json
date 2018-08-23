@@ -1,0 +1,9 @@
+{
+	"code":"AGREEMENT_STATUS",
+	"comment":"协议状态:\r\n            \tA：有效\r\n            \tE：无效",
+	"dataType":"Varchar",
+	"id":"12ba0b3b1eee4d7286fbd8814f678660",
+	"lengths":1,
+	"precision":0,
+	"valid":true
+}

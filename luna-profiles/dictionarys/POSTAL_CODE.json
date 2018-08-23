@@ -1,0 +1,9 @@
+{
+	"code":"POSTAL_CODE",
+	"comment":"邮政代码",
+	"dataType":"Varchar",
+	"id":"2d622ab61197467094a5714b9d907a5e",
+	"lengths":6,
+	"precision":0,
+	"valid":true
+}

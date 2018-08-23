@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dcits.ensemble.dbmanage.dao.MbAcctDao">
+    <sql id="Base_Column_List" >
+        INTERNAL_KEY, BASE_ACCT_NO, PROD_TYPE, CCY, SEQ_NO, BRANCH, CLIENT_NO, ACCT_STATUS, ACCT_NAME, SOURCE_TYPE, SOURCE_MODULE, USER_ID, LAST_CHANGE_DATE
+    </sql>
+    <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.MbAcct">
+        insert into MB_ACCT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="internalKey != null">
+                INTERNAL_KEY,
+            </if>
+            <if test="baseAcctNo != null">
+                BASE_ACCT_NO,
+            </if>
+            <if test="prodType != null">
+                PROD_TYPE,
+            </if>
+            <if test="ccy != null">
+                CCY,
+            </if>
+            <if test="seqNo != null">
+                SEQ_NO,
+            </if>
+            <if test="branch != null">
+                BRANCH,
+            </if>
+            <if test="clientNo != null">
+                CLIENT_NO,
+            </if>
+            <if test="acctStatus != null">
+                ACCT_STATUS,
+            </if>
+            <if test="acctName != null">
+                ACCT_NAME,
+            </if>
+            <if test="sourceType != null">
+                SOURCE_TYPE,
+            </if>
+            <if test="sourceModule != null">
+                SOURCE_MODULE,
+            </if>
+            <if test="userId != null">
+                USER_ID,
+            </if>
+            <if test="lastChangeDate != null">
+                LAST_CHANGE_DATE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="internalKey != null">
+              #{internalKey,jdbcType=VARCHAR},
+            </if>
+            <if test="baseAcctNo != null">
+              #{baseAcctNo,jdbcType=VARCHAR},
+            </if>
+            <if test="prodType != null">
+              #{prodType,jdbcType=VARCHAR},
+            </if>
+            <if test="ccy != null">
+              #{ccy,jdbcType=VARCHAR},
+            </if>
+            <if test="seqNo != null">
+              #{seqNo,jdbcType=VARCHAR},
+            </if>
+            <if test="branch != null">
+              #{branch,jdbcType=VARCHAR},
+            </if>
+            <if test="clientNo != null">
+              #{clientNo,jdbcType=VARCHAR},
+            </if>
+            <if test="acctStatus != null">
+              #{acctStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="acctName != null">
+              #{acctName,jdbcType=VARCHAR},
+            </if>
+            <if test="sourceType != null">
+              #{sourceType,jdbcType=VARCHAR},
+            </if>
+            <if test="sourceModule != null">
+              #{sourceModule,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+              #{userId,jdbcType=VARCHAR},
+            </if>
+            <if test="lastChangeDate != null">
+              #{lastChangeDate,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.MbAcct"
+            resultType="com.dcits.ensemble.dbmanage.dbmodel.MbAcct">
+        select
+        <include refid="Base_Column_List" />
+          from MB_ACCT
+    </select>
+    <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.MbAcct">
+        update MB_ACCT
+        <set>
+            <if test="internalKey != null">
+                INTERNAL_KEY = #{internalKey,jdbcType=VARCHAR},
+            </if>
+            <if test="baseAcctNo != null">
+                BASE_ACCT_NO = #{baseAcctNo,jdbcType=VARCHAR},
+            </if>
+            <if test="prodType != null">
+                PROD_TYPE = #{prodType,jdbcType=VARCHAR},
+            </if>
+            <if test="ccy != null">
+                CCY = #{ccy,jdbcType=VARCHAR},
+            </if>
+            <if test="seqNo != null">
+                SEQ_NO = #{seqNo,jdbcType=VARCHAR},
+            </if>
+            <if test="branch != null">
+                BRANCH = #{branch,jdbcType=VARCHAR},
+            </if>
+            <if test="clientNo != null">
+                CLIENT_NO = #{clientNo,jdbcType=VARCHAR},
+            </if>
+            <if test="acctStatus != null">
+                ACCT_STATUS = #{acctStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="acctName != null">
+                ACCT_NAME = #{acctName,jdbcType=VARCHAR},
+            </if>
+            <if test="sourceType != null">
+                SOURCE_TYPE = #{sourceType,jdbcType=VARCHAR},
+            </if>
+            <if test="sourceModule != null">
+                SOURCE_MODULE = #{sourceModule,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                USER_ID = #{userId,jdbcType=VARCHAR},
+            </if>
+            <if test="lastChangeDate != null">
+                LAST_CHANGE_DATE = #{lastChangeDate,jdbcType=VARCHAR},
+            </if>
+        </set>
+    </update>
+    <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.MbAcct">
+        delete from MB_ACCT
+    </delete>
+</mapper>

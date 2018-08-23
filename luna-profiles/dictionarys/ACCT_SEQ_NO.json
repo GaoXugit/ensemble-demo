@@ -1,0 +1,9 @@
+{
+	"code":"ACCT_SEQ_NO",
+	"comment":"账户序列号，采用顺序数字，表示在同一账号、账户类型、币种下的不同子账户，比如定期存款序列号",
+	"dataType":"Varchar",
+	"id":"d2882152950f4ddc8a5b2e8fd187f38b",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

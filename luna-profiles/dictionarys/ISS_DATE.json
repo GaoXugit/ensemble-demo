@@ -1,0 +1,9 @@
+{
+	"code":"ISS_DATE",
+	"comment":"签发日期",
+	"dataType":"Varchar",
+	"id":"3bd11a0a636448738f738795a4192ac2",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

@@ -1,0 +1,9 @@
+{
+	"code":"PREF_FLAG",
+	"comment":"是否首选证件 Y-首选证件信息 N-不是首选证件信息",
+	"dataType":"Varchar",
+	"id":"17c6d548e8b6480d9188d22a26ff34a4",
+	"lengths":1,
+	"precision":0,
+	"valid":true
+}

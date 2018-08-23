@@ -1,0 +1,9 @@
+{
+	"code":"CCY",
+	"comment":"账户币种，对于AIO账户和一本通账户，账户币种为XXX",
+	"dataType":"Varchar",
+	"id":"e9df4b19d596400a80e5df080214636b",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

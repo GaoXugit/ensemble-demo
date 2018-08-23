@@ -1,0 +1,9 @@
+{
+	"code":"BASE_ACCT_NO",
+	"comment":"账号",
+	"dataType":"Varchar",
+	"id":"86d092fae86246b1baa04b2ad66afa86",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

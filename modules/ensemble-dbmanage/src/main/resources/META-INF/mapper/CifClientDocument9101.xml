@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dcits.ensemble.dbmanage.dao.CifClientDocument9101Dao">
+  <!-- Created by admin on 2017/04/08 16:12:53. -->
+  <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClientDocument9101" resultType="com.dcits.ensemble.dbmanage.dbmodel.CifClientDocument9101">
+    select *
+    from CIF_CLIENT_DOCUMENT_9101
+    where CLIENT_NO = #{clientNo,jdbcType=VARCHAR}
+      <if test="documentType != null">
+        AND DOCUMENT_TYPE = #{documentType,jdbcType=VARCHAR}
+      </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClientDocument9101">
+    delete from CIF_CLIENT_DOCUMENT_9101
+    where CLIENT_NO = #{clientNo,jdbcType=VARCHAR}
+      <if test="documentType != null">
+        AND DOCUMENT_TYPE = #{documentType,jdbcType=VARCHAR}
+      </if>
+  </delete>
+  <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClientDocument9101">
+    update CIF_CLIENT_DOCUMENT_9101
+    <set>
+      <if test="documentId != null">
+        DOCUMENT_ID = #{documentId,jdbcType=VARCHAR},
+      </if>
+      <if test="issCountry != null">
+        ISS_COUNTRY = #{issCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="prefFlag != null">
+        PREF_FLAG = #{prefFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="issPlace != null">
+        ISS_PLACE = #{issPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="issAuthority != null">
+        ISS_AUTHORITY = #{issAuthority,jdbcType=VARCHAR},
+      </if>
+      <if test="issDate != null">
+        ISS_DATE = #{issDate,jdbcType=VARCHAR},
+      </if>
+      <if test="expiryDate != null">
+        EXPIRY_DATE = #{expiryDate,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where CLIENT_NO = #{clientNo,jdbcType=VARCHAR}
+        AND DOCUMENT_TYPE = #{documentType,jdbcType=VARCHAR}
+  </update>
+  <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClientDocument9101">
+    insert into CIF_CLIENT_DOCUMENT_9101
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="documentType != null">
+        DOCUMENT_TYPE,
+      </if>
+      <if test="documentId != null">
+        DOCUMENT_ID,
+      </if>
+      <if test="issCountry != null">
+        ISS_COUNTRY,
+      </if>
+      <if test="prefFlag != null">
+        PREF_FLAG,
+      </if>
+      <if test="issPlace != null">
+        ISS_PLACE,
+      </if>
+      <if test="issAuthority != null">
+        ISS_AUTHORITY,
+      </if>
+      <if test="issDate != null">
+        ISS_DATE,
+      </if>
+      <if test="expiryDate != null">
+        EXPIRY_DATE,
+      </if>
+      <if test="clientNo != null">
+        CLIENT_NO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="documentType != null">
+        #{documentType,jdbcType=VARCHAR},
+      </if>
+      <if test="documentId != null">
+        #{documentId,jdbcType=VARCHAR},
+      </if>
+      <if test="issCountry != null">
+        #{issCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="prefFlag != null">
+        #{prefFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="issPlace != null">
+        #{issPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="issAuthority != null">
+        #{issAuthority,jdbcType=VARCHAR},
+      </if>
+      <if test="issDate != null">
+        #{issDate,jdbcType=VARCHAR},
+      </if>
+      <if test="expiryDate != null">
+        #{expiryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="clientNo != null">
+        #{clientNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectDocumentsByClientNo" parameterType="java.util.Map" resultType="com.dcits.ensemble.dbmanage.dbmodel.CifClientDocument9101">
+    select *
+    from CIF_CLIENT_DOCUMENT_9101
+    where CLIENT_NO = #{clientNo,jdbcType=VARCHAR}
+  </select>
+  <update id="updateCifClientDocument" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClientDocument9101">
+    update CIF_CLIENT_DOCUMENT_9101
+    <set>
+      <if test="documentId != null">
+        DOCUMENT_ID = #{documentId,jdbcType=VARCHAR},
+      </if>
+      <if test="issCountry != null">
+        ISS_COUNTRY = #{issCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="prefFlag != null">
+        PREF_FLAG = #{prefFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="issPlace != null">
+        ISS_PLACE = #{issPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="issAuthority != null">
+        ISS_AUTHORITY = #{issAuthority,jdbcType=VARCHAR},
+      </if>
+      <if test="issDate != null">
+        ISS_DATE = #{issDate,jdbcType=VARCHAR},
+      </if>
+      <if test="expiryDate != null">
+        EXPIRY_DATE = #{expiryDate,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where CLIENT_NO = #{clientNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

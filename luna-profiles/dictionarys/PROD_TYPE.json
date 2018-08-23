@@ -1,0 +1,9 @@
+{
+	"code":"PROD_TYPE",
+	"comment":"产品类型",
+	"dataType":"Varchar",
+	"id":"bf734472a36e45a98f46bd9f5f3323c7",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

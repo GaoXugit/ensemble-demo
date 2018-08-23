@@ -1,0 +1,9 @@
+{
+	"code":"GLOBAL_ID",
+	"comment":"证件号码",
+	"dataType":"Varchar",
+	"id":"6e080c15cf9446f7864b12d36905a345",
+	"lengths":25,
+	"precision":0,
+	"valid":true
+}

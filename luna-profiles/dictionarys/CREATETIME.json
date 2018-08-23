@@ -1,0 +1,9 @@
+{
+	"code":"CREATETIME",
+	"comment":"创建时间",
+	"dataType":"Varchar",
+	"id":"c3963f804dbf44feb337deac18399b9f",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

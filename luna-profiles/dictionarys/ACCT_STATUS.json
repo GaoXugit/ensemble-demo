@@ -1,0 +1,9 @@
+{
+	"code":"ACCT_STATUS",
+	"comment":"账户状态  H：待激活 A：活动 D：睡眠  S：久悬  O：转营业外 C：关闭 P：逾期   \r\n            以下废弃： R：撤销  C：自动关闭  E：手工关闭 M：到期已结清  B：未到期结清",
+	"dataType":"Varchar",
+	"id":"fc9a7ba8a190438fb50acc5874b89232",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

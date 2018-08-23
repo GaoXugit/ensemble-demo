@@ -1,0 +1,9 @@
+{
+	"code":"SERVICE_TYPE",
+	"comment":"服务类型",
+	"dataType":"Varchar",
+	"id":"0e0b5642681646ef8d58a9d46e89debf",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

@@ -1,0 +1,9 @@
+{
+	"code":"COUNTRY_LOC",
+	"comment":"国籍",
+	"dataType":"Varchar",
+	"id":"4f48e62524ad496eb1d669815e7a1750",
+	"lengths":3,
+	"precision":0,
+	"valid":true
+}

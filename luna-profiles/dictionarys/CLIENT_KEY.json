@@ -1,0 +1,9 @@
+{
+	"code":"CLIENT_KEY",
+	"comment":"内部Key",
+	"dataType":"Varchar",
+	"id":"d856fd92719b4a1990886240f6296c57",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

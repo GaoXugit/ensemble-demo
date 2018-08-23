@@ -1,0 +1,9 @@
+{
+	"code":"TYPE",
+	"comment":"节点类型",
+	"dataType":"Varchar",
+	"id":"308976ede5a54543ad85e7bb0d6d2f4f",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

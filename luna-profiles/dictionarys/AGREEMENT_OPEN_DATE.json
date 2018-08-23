@@ -1,0 +1,9 @@
+{
+	"code":"AGREEMENT_OPEN_DATE",
+	"comment":"签约时间",
+	"dataType":"Varchar",
+	"id":"054394fc76ae4094950f384a420d6cce",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

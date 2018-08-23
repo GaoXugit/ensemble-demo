@@ -1,0 +1,9 @@
+{
+	"code":"VERSION",
+	"comment":"版本号",
+	"dataType":"Varchar",
+	"id":"dcb20de83559431389570772e79d0447",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

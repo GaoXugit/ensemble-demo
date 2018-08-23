@@ -1,0 +1,9 @@
+{
+	"code":"RB_ACCT_NO",
+	"comment":"存款账号",
+	"dataType":"Varchar",
+	"id":"60557bae3a124acc98f13855dbb72c64",
+	"lengths":50,
+	"precision":0,
+	"valid":true
+}

@@ -1,0 +1,9 @@
+{
+	"code":"EVENT_TYPE",
+	"comment":"事件类型",
+	"dataType":"Varchar",
+	"id":"eed805997afe440db09e8a03aa960f6d",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

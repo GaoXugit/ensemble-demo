@@ -1,0 +1,9 @@
+{
+	"code":"EVENT_ID",
+	"comment":"事件ID",
+	"dataType":"Varchar",
+	"id":"c198bc3a0b704cc28fed8c72116921cd",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

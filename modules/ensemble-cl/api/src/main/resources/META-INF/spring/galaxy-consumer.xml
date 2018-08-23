@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:dcits="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://code.alibabatech.com/schema/dubbo 
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dcits:reference id="ICLCommonCheck"
+                     interface="com.dcits.ensemble.cl.api.inner.ICommonCheck" check="false">
+    </dcits:reference>
+    <!-- 贷款账户查询（demo） -->
+    <dcits:reference id="MbsdCore-1400-0201"
+                     interface="com.dcits.ensemble.cl.api.mbsdcore.ICore14000201" check="false">
+    </dcits:reference>
+    <!-- 贷款账户创建（demo） -->
+    <dcits:reference id="MbsdCore-1200-0202"
+                     interface="com.dcits.ensemble.cl.api.mbsdcore.ICore12000202" check="false">
+    </dcits:reference>
+    <!-- 贷款发放（demo） -->
+    <dcits:reference id="MbsdCore-1000-0203"
+                     interface="com.dcits.ensemble.cl.api.mbsdcore.ICore10000203" check="false">
+    </dcits:reference>
+    <!-- 贷款还款（demo） -->
+    <dcits:reference id="MbsdCore-1000-0204"
+                     interface="com.dcits.ensemble.cl.api.mbsdcore.ICore10000204" check="false">
+    </dcits:reference>
+</beans>

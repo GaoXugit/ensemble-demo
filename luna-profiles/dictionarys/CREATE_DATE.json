@@ -1,0 +1,9 @@
+{
+	"code":"CREATE_DATE",
+	"comment":"创建日期",
+	"dataType":"Varchar",
+	"id":"b6b2f3a5ffb546269ab58ad49a9ef818",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

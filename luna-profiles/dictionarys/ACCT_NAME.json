@@ -1,0 +1,9 @@
+{
+	"code":"ACCT_NAME",
+	"comment":"账号名称",
+	"dataType":"Varchar",
+	"id":"99d2454d6b20480795c8a2019cbc18dc",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

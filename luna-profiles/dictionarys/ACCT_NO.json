@@ -1,0 +1,9 @@
+{
+	"code":"ACCT_NO",
+	"comment":"账号",
+	"dataType":"Varchar",
+	"id":"a4216b90ce2843b49706e1167f72e86d",
+	"lengths":50,
+	"precision":0,
+	"valid":true
+}

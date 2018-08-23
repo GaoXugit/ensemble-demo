@@ -1,0 +1,9 @@
+{
+	"code":"FLOWID",
+	"comment":"流程ID",
+	"dataType":"Varchar",
+	"id":"55865de445ca4f86840c1b76d17ea02b",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

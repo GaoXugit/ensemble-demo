@@ -1,0 +1,9 @@
+{
+	"code":"CREATE_TIME",
+	"comment":"创建时间",
+	"dataType":"Varchar",
+	"id":"5a79603f998d42c89b794ecc7e47af0b",
+	"lengths":17,
+	"precision":0,
+	"valid":true
+}

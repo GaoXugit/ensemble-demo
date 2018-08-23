@@ -1,0 +1,9 @@
+{
+	"code":"INTERNAL_KEY",
+	"comment":"账户标识符",
+	"dataType":"Varchar",
+	"id":"9d1794b52a354784a0519ffd0c7ffb8f",
+	"lengths":10,
+	"precision":0,
+	"valid":true
+}

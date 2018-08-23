@@ -1,0 +1,9 @@
+{
+	"code":"EXPR",
+	"comment":"布尔类型表达式，用于决策节点后的连接线",
+	"dataType":"Varchar",
+	"id":"1f121e273bed41289b9bd3351e6ce7d6",
+	"lengths":300,
+	"precision":0,
+	"valid":true
+}

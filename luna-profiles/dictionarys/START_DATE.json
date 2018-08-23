@@ -1,0 +1,9 @@
+{
+	"code":"START_DATE",
+	"comment":"开始日期",
+	"dataType":"Varchar",
+	"id":"297d0cdd4447449787ca33b7a5548291",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

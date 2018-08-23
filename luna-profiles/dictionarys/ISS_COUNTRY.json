@@ -1,0 +1,9 @@
+{
+	"code":"ISS_COUNTRY",
+	"comment":"签发国家",
+	"dataType":"Varchar",
+	"id":"1cc5a9e2cc474928ae24fd3f6c3d3053",
+	"lengths":3,
+	"precision":0,
+	"valid":true
+}

@@ -1,0 +1,9 @@
+{
+	"code":"CLIENT_CITY",
+	"comment":"城市代码",
+	"dataType":"Varchar",
+	"id":"b5045d1d1c714b03b3b78448e684c464",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

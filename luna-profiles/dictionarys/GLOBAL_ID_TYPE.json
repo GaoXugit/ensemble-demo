@@ -1,0 +1,9 @@
+{
+	"code":"GLOBAL_ID_TYPE",
+	"comment":"证件类型，参数表：CIF_DOCUMENT_TYPE",
+	"dataType":"Varchar",
+	"id":"0ca88264859145e9b0b41efca03e98d9",
+	"lengths":3,
+	"precision":0,
+	"valid":true
+}

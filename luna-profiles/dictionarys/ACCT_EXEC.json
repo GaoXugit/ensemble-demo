@@ -1,0 +1,9 @@
+{
+	"code":"ACCT_EXEC",
+	"comment":"客户经理",
+	"dataType":"Varchar",
+	"id":"360cedff869c499f8f0e2e82d5eaa4d0",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

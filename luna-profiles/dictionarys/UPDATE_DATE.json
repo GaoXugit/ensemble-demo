@@ -1,0 +1,9 @@
+{
+	"code":"UPDATE_DATE",
+	"comment":"更新日期",
+	"dataType":"Varchar",
+	"id":"2495fe6187bf4121a62415a8f0b11c77",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

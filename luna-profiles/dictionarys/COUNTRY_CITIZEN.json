@@ -1,0 +1,9 @@
+{
+	"code":"COUNTRY_CITIZEN",
+	"comment":"居住国家",
+	"dataType":"Varchar",
+	"id":"61e6c422d91a4f15a5822905114b1a52",
+	"lengths":3,
+	"precision":0,
+	"valid":true
+}

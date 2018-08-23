@@ -1,0 +1,11 @@
+[
+	{
+		"dataBaseType":"MYSQL",
+		"id":"dfb9263b5399477683b8f5d8a8813c9d",
+		"name":"database",
+		"passWord":"root",
+		"url":"jdbc:mysql://10.7.94.165:3306/ensemble",
+		"userName":"root",
+		"valid":true
+	}
+]

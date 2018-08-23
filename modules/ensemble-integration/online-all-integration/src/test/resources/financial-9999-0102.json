@@ -1,0 +1,33 @@
+{
+  "SYS_HEAD": {
+    "TRAN_CODE": "",
+    "TRAN_TYPE": "",
+    "REVERSAL_TRAN_TYPE": "",
+    "TRAN_MODE": "ONLINE",
+    "SOURCE_TYPE": "MT",
+    "BRANCH_ID": "1400",
+    "USER_ID": "CP0101",
+    "TRAN_DATE": "20160215",
+    "TRAN_TIMESTAMP": "172249135",
+    "THREAD_NO": "qtp1935376829-70",
+    "SERVICE_CODE": "SVR_FINANCIAL",
+    "SERVER_ID": "127.0.0.1",
+    "WS_ID": "001",
+    "USER_LANG": "CHINESE",
+    "SEQ_NO": "20",
+    "PROGRAM_ID": "RB31",
+    "AUTH_USER_ID": "",
+    "AUTH_PASSWORD": "",
+    "AUTH_FLAG": "N",
+    "APPR_USER_ID": "",
+    "APPR_FLAG": "E",
+    "SOURCE_BRANCH_NO": "1400",
+    "DEST_BRANCH_NO": "2400",
+    "MODULE_ID": "DE",
+    "MESSAGE_TYPE": "9999",
+    "MESSAGE_CODE": "0102",
+    "FILE_PATH": "",
+    "MAC_VALUE": ""
+  },
+  "BODY": {"ACCT_NAME": "test7"}
+}

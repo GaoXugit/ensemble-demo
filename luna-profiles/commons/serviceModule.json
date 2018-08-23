@@ -1,0 +1,20 @@
+[
+	{
+		"comment":"贷款",
+		"id":"ce4b74032f814c698566847b0c427c2f",
+		"name":"cl",
+		"valid":true
+	},
+	{
+		"comment":"客户信息",
+		"id":"0bb9c9d922b64ab3ac813f07784a451e",
+		"name":"cif",
+		"valid":true
+	},
+	{
+		"comment":"存款",
+		"id":"2fa24eb1f32f43768d07fa27f3664106",
+		"name":"rb",
+		"valid":true
+	}
+]

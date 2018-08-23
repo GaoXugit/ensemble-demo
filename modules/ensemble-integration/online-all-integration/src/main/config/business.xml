@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:dcits="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <context:component-scan base-package="com.dcits.galaxy.dtp"></context:component-scan>
+    <!-- ***************************************延时服务发布 start******************************** -->
+    <dcits:provider delay="3000"/>
+    <!-- ***************************************延时服务发布 end******************************** -->
+
+    <!-- ***************************************行级缓存配置 start******************************** -->
+    <!-- 系统参数级缓存 -->
+    <bean id="SystemParamCache" class="com.dcits.galaxy.cache.global.RedisCache"
+          p:name="param" p:period="0"/>
+
+    <!-- 业务级缓存 -->
+    <bean id="BusinessParamCache" class="com.dcits.galaxy.cache.global.RedisCache"
+          p:name="business" p:period="3"/>
+
+    <!-- 枚举类型注入到类中，需要使用FieldRetrievingFactoryBean类将枚举类型转换为bean，在其他类需要注入枚举类型时，ref引用此bean -->
+    <bean id="PARAM_CACHE" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="com.dcits.galaxy.business.dao.BaseDao.CacheType.PARAM_CACHE"/>
+    </bean>
+
+    <bean id="BUSINESS_CACHE" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="com.dcits.galaxy.business.dao.BaseDao.CacheType.BUSINESS_CACHE"/>
+    </bean>
+    <!-- ***************************************行级缓存配置 end******************************** -->
+
+    <!-- 默认的dataAccessor -->
+    <bean id="dataAccessor" class="com.dcits.galaxy.business.dao.DataAccessor"
+          p:shardSqlSessionTemplate-ref="shardSqlSessionTemplate"/>
+
+    <!-- ***************************************业务服务配置 start******************************** -->
+    <!-- 系统公共检查服务，发布为RPC远程服务，例如可以设置上下文信息、系统公共层面检查等业务处理
+         业务可以在这个处理中，将runDate赋值给SysHead.runDate，框架将回在输出中返回runDate，若不配置将不跳过检查 -->
+    <dcits:service group="${galaxy.application.group}" interface="com.dcits.galaxy.business.api.SystemCheck"
+                   ref="busiSystemCheck"/>
+
+    <!-- 服务后置处理，例如清楚上下文操作、以及服务后的系统公共业务处理等，若不配置将不跳过处理  -->
+    <dcits:service group="${galaxy.application.group}" interface="com.dcits.galaxy.business.api.AfterService"
+                   ref="busiAfterService"/>
+
+    <!-- 业务流水号由具体业务实现，框架会填充到SysHead.reference中，若不配置将不跳过检查无法对SysHead.reference赋值  -->
+    <dcits:service group="${galaxy.application.group}" interface="com.dcits.galaxy.business.api.BusinessTraceNo"
+                   ref="businessTraceNo"/>
+    <!-- ***************************************业务服务配置 end******************************** -->
+
+    <!-- ***************************************报文转换部分 start******************************** -->
+    <!-- cd格式的xml  -->
+    <bean id="xmlConvert" class="com.dcits.galaxy.business.convert.xml.XmlConvert">
+        <!--<property name="configLocation" value="classpath:parseStringCfg.xml"/>-->
+    </bean>
+    <!-- json报文  -->
+    <bean id="jsonConvert" class="com.dcits.galaxy.business.convert.json.JsonConvert"/>
+    <!-- json报文转换工厂 id名称必须保证为（convertFactory）  -->
+    <bean id="convertFactory" class="com.dcits.galaxy.business.convert.ConvertFactory">
+        <property name="converts">
+            <map>
+                <entry key="xml" value-ref="xmlConvert"/>
+                <entry key="json" value-ref="jsonConvert"/>
+            </map>
+        </property>
+    </bean>
+    <!-- ***************************************报文转换部分 end******************************** -->
+
+    <!-- ***********************************应用系统 health check start************************* -->
+    <!-- id名称必须保证为（appHealthCheck）   -->
+    <bean id="appHealthCheck" class="com.dcits.galaxy.oms.health.AppHealthCheckFactory">
+        <property name="checkList">
+            <list>
+                <!-- 此处放置各应用实现的IAppHealthCheck的bean 以便业务后续扩展使用 -->
+            </list>
+        </property>
+    </bean>
+    <dcits:service interface="com.dcits.galaxy.oms.health.api.IAppHealthCheck" ref="appHealthCheck"/>
+    <!-- ***********************************应用系统 health check start************************* -->
+
+    <!-- ***********************************自增序列服务 sequences start************************* -->
+    <!-- 序列持久化DAO，默认提供序列存放于关系型数据库中。 -->
+    <bean id="sequencesDao" class="com.dcits.galaxy.business.sequences.dao.SequencesDao">
+        <property name="shardSqlSessionTemplate" ref="shardSqlSessionTemplate"/>
+    </bean>
+    <!-- 序列配置 -->
+    <bean id="sequencesConfiguration" class="com.dcits.galaxy.business.sequences.SequencesConfiguration"/>
+    <!-- 分布式服务的自增序列生成器，集群中同一时间，有且仅有一个节点提供序列服务 -->
+    <bean id="shardSequences" class="com.dcits.galaxy.business.sequences.impl.ServiceShardSequences">
+        <property name="sequencesConfiguration" ref="sequencesConfiguration"/>
+        <property name="sequencesDao" ref="sequencesDao"/>
+        <property name="shardSequencesCacheManager" ref="shardSequencesCacheManager"/>
+    </bean>
+    <!-- 本地序列获取序列实现，当且仅当序列服务无法使用时，使用本地方式。每次获取数据实时与持久化序列保持一致 -->
+    <bean id="localSequences" class="com.dcits.galaxy.business.sequences.impl.ServiceShardSequences">
+        <property name="sequencesDao" ref="sequencesDao"/>
+        <property name="sequencesConfiguration" ref="sequencesConfiguration"/>
+    </bean>
+    <!-- 序列缓存管理器 -->
+    <bean id="shardSequencesCacheManager"
+          class="com.dcits.galaxy.business.sequences.impl.ServiceShardSequencesCacheManager">
+        <property name="sequencesConfiguration" ref="sequencesConfiguration"/>
+        <property name="sequencesDao" ref="sequencesDao"/>
+        <!-- 异步同步周期，默认500ms。只有持久化方式为async是有效 -->
+        <property name="persistentPeriod" value="500"/>
+        <!-- 持久化方式。async：异步持久化方式；sync：同步持久化方式。默认async
+            异步方式会启动一个守护进行，监控缓存中的序列，周期性的将序列持久化。
+            同步方式会在内存中的序列被用完时，持久一次，无守护进程。此动作在获取序列同时进行。-->
+        <property name="persistentMode" value="sync"/>
+    </bean>
+    <!-- zk序列服务协调器 -->
+    <bean class="com.dcits.galaxy.business.sequences.ZkSequencesLock">
+        <property name="shardSequences" ref="shardSequences"/>
+        <property name="shardSequencesCacheManager" ref="shardSequencesCacheManager"/>
+    </bean>
+    <!-- ***********************************自增序列服务 sequences end************************* -->
+
+    <!-- ***********************************DTP start************************* -->
+    <bean id="branchDao" class="com.dcits.galaxy.dtp.db.dao.BranchDao"/>
+    <bean id="trunkDao" class="com.dcits.galaxy.dtp.db.dao.TrunkDao"/>
+    <bean id="prepareLogDao" class="com.dcits.galaxy.dtp.db.dao.PrepareLogDao"/>
+    <bean id="submitLogDao" class="com.dcits.galaxy.dtp.db.dao.SubmitLogDao"/>
+    <bean id="branchService" class="com.dcits.galaxy.dtp.db.branch.BranchServiceImplDB"/>
+    <bean id="trunkService" class="com.dcits.galaxy.dtp.db.trunk.TrunkServiceImplDB"/>
+    <bean id="prepareLogService"
+          class="com.dcits.galaxy.dtp.db.log.service.PrepareLogServiceImplDB"/>
+    <bean id="submitLogService"
+          class="com.dcits.galaxy.dtp.db.log.service.SubmitLogServiceImplDB"/>
+    <bean id="branchManager"
+          class="com.dcits.galaxy.dtp.defaults.branch.DefaultBranchManager"/>
+    <dcits:service group="${galaxy.application.group}"
+                   interface="com.dcits.galaxy.dtp.branch.BranchManager" ref="branchManager"/>
+    <bean id="trunkManager" class="com.dcits.galaxy.dtp.defaults.trunk.DefaultTrunkManager"/>
+    <bean id="logManager" class="com.dcits.galaxy.dtp.defaults.log.DefaultLogManager">
+    </bean>
+    <!-- 提交日志执行器实现 -->
+    <bean id="submitLogExecutor"
+          class="com.dcits.galaxy.dtp.defaults.log.executor.DefaultSubmitLogExecutor"/>
+    <!-- 业务准备日志执行器实现 -->
+    <bean id="prepareLogExecutor" class="com.dcits.galaxy.dtp.defaults.log.executor.DefaultPrepareLogExecutor"/>
+    
+    <!-- DTP恢复机制 -->
+    <bean id="DTPResumer" class="com.dcits.galaxy.dtp.resume.Resumer" init-method="init">
+    	<property name="zkServers" value="${galaxy.registry.address}"/>
+    	<property name="zkSessionTimeout" value="5000"/>
+    	<property name="zkConnectionTimeout" value="5000"/>
+    	<property name="appGroup" value="${galaxy.application.group}"/>
+    	<property name="appName" value="${galaxy.application.name}"/>
+    	<!-- 恢复频率 单位：秒 -->
+    	<property name="internal" value="60"/>
+    	<!-- dtp超时时间，超过此时间未提交或取消完成的事务将进行恢复处理 单位：秒 -->
+    	<property name="timeout" value="180"/>
+    </bean>
+    <!-- DTP清理机制 -->
+    <bean id="DTPCleaner" class="com.dcits.galaxy.dtp.clean.TrunkCleaner" init-method="start" destroy-method="shutdown">
+    	<property name="appGroup" value="${galaxy.application.group}"/>
+    	<!-- 清理时间，超过此事间的已完成dtp事务日志将被清理 单位：秒 -->
+    	<property name="cleanCycleTime" value="360"/>
+    	<!-- 清理频率 单位：秒 -->
+    	<property name="frequency" value="120"/>
+    </bean>
+    <!-- ***********************************DTP end************************* -->
+	
+    <!-- 默认锁配置 -->
+    <bean id="dtpResourceDao" class="com.dcits.galaxy.dtp.resource.DtpResourceDao" />	
+	<bean id="dtpResourceService" class="com.dcits.galaxy.dtp.resource.DtpResourceService" />
+</beans>

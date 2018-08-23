@@ -1,0 +1,9 @@
+{
+	"code":"AGREEMENT_ID",
+	"comment":"协议号",
+	"dataType":"Varchar",
+	"id":"b55312ecd3784871bfab87027a081c38",
+	"lengths":50,
+	"precision":0,
+	"valid":true
+}

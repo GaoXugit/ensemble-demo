@@ -1,0 +1,9 @@
+{
+	"code":"TX_FLAG",
+	"comment":"事务开关",
+	"dataType":"Varchar",
+	"id":"6f874f9792ae46199e7dab7349cc69a6",
+	"lengths":1,
+	"precision":0,
+	"valid":true
+}

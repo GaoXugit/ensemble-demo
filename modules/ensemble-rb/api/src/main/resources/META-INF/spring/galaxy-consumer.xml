@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:dcits="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://code.alibabatech.com/schema/dubbo 
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dcits:reference id="IRBCommonCheck"
+                     interface="com.dcits.ensemble.rb.api.inner.ICommonCheck" check="false">
+    </dcits:reference>
+    <!--存款开户-->
+    <dcits:reference id="MbsdCore-1000-9102"
+                     interface="com.dcits.ensemble.rb.api.mbsdcore.ICore10009102" check="false">
+    </dcits:reference>
+    <!--存款存入-->
+    <dcits:reference id="MbsdCore-1000-9103"
+                     interface="com.dcits.ensemble.rb.api.mbsdcore.ICore10009103" check="false">
+    </dcits:reference>
+    <!--存款支取-->
+    <dcits:reference id="MbsdCore-1000-9104"
+                     interface="com.dcits.ensemble.rb.api.mbsdcore.ICore10009104" check="false">
+    </dcits:reference>
+    <!-- 批量文件处理服务 -->
+    <dcits:reference id="MbsdCore-1220-9901"
+                     interface="com.dcits.ensemble.rb.api.mbsdcore.ICore12209901" check="false">
+    </dcits:reference>
+    <!-- 存款账户查询（demo） -->
+    <dcits:reference id="MbsdCore-1400-9101"
+                     interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14009101" check="false">
+    </dcits:reference>
+    <!-- 批量文件处理RPC服务引用定义 -->
+    <dcits:reference id="asyncFileProcess"
+                     interface="com.dcits.ensemble.rb.api.inner.IFileProcess" check="false" scope="remote">
+        <!--
+            具体文件内容异步处理
+            sent="true" 等待消息发出，消息发送失败将抛出异常。
+            sent="false" 不等待消息发出，将消息放入IO队列，即刻返回。
+            如果你只是想异步，完全忽略返回值，可以配置return="false"，以减少Future对象的创建和管理成本：
+        -->
+        <dcits:method name="file9901Process" async="true" sent="true" return="false"/>
+    </dcits:reference>
+</beans>

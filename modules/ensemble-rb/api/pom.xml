@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dcits.ensemble.demo</groupId>
+        <artifactId>ensemble-rb</artifactId>
+        <version>1.5.3-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <artifactId>ensemble-rb-api</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.galaxy</groupId>
+            <artifactId>galaxy-business-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dcits.ensemble.demo</groupId>
+            <artifactId>ensemble-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

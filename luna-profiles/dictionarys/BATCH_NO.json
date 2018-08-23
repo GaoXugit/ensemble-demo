@@ -1,0 +1,9 @@
+{
+	"code":"BATCH_NO",
+	"comment":"批处理流水号",
+	"dataType":"Varchar",
+	"id":"1e86e0ba522f4695987f793c7e894678",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

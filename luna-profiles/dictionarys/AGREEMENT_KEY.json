@@ -1,0 +1,9 @@
+{
+	"code":"AGREEMENT_KEY",
+	"comment":"协议键值",
+	"dataType":"Varchar",
+	"id":"01691ade03b14887b63a19c949009b89",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

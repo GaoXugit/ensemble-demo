@@ -1,0 +1,9 @@
+{
+	"code":"SOURCE_TYPE",
+	"comment":"开户渠道",
+	"dataType":"Varchar",
+	"id":"462fee5027b342d6af70668ceacfce22",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

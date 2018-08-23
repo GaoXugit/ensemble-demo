@@ -1,0 +1,9 @@
+{
+	"code":"TO_NODE",
+	"comment":"目标节点",
+	"dataType":"Varchar",
+	"id":"db63be302de94900a97ed7cb777d6022",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

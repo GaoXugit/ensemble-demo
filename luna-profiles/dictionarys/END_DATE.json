@@ -1,0 +1,9 @@
+{
+	"code":"END_DATE",
+	"comment":"终止日期",
+	"dataType":"Varchar",
+	"id":"f09cfab90f424c4ebccb603c6ad719b7",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

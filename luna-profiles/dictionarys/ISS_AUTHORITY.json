@@ -1,0 +1,9 @@
+{
+	"code":"ISS_AUTHORITY",
+	"comment":"签发机构",
+	"dataType":"Varchar",
+	"id":"ae14124da3654ba7b80bcf93552da484",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

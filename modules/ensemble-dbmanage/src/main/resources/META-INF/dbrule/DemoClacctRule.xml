@@ -1,0 +1,16 @@
+<rules>
+    <rule>
+        <namespace>com.dcits.ensemble.cl.demo.dao.DemoClacctDao</namespace>
+        <shardingExpression><![CDATA[router.mod(router.cutLast2(acctNo),2)==0]]></shardingExpression>
+        <shards>partition1</shards>
+    </rule>
+    <rule>
+        <namespace>com.dcits.ensemble.cl.demo.dao.DemoClacctDao</namespace>
+        <shardingExpression><![CDATA[router.mod(router.cutLast2(acctNo),2)==1]]></shardingExpression>
+        <shards>partition2</shards>
+    </rule>
+    <rule>
+        <sqlmap>com.dcits.ensemble.cl.demo.dao.DemoClacctDao.selectAcctInfoByName</sqlmap>
+        <shards>partition1,partition2</shards>
+    </rule>
+</rules>

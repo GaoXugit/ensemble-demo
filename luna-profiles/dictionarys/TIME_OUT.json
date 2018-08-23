@@ -1,0 +1,9 @@
+{
+	"code":"TIME_OUT",
+	"comment":"流程处理超时时间",
+	"dataType":"Number",
+	"id":"8490e99c3e2a46e884b72e5bc1538f37",
+	"lengths":4,
+	"precision":0,
+	"valid":true
+}

@@ -1,0 +1,9 @@
+{
+	"code":"DOCUMENT_TYPE",
+	"comment":"证件类型，参数定义表：  CIF_DOCUMENT_TYPE",
+	"dataType":"Varchar",
+	"id":"063c78a056e94b5e95e4243b01adab21",
+	"lengths":3,
+	"precision":0,
+	"valid":true
+}

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dcits.ensemble.dbmanage.dao.CifClientDao">
+  <!-- Created by admin on 2017/04/08 00:12:21. -->
+  <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClient" resultType="com.dcits.ensemble.dbmanage.dbmodel.CifClient">
+    select *
+    from CIF_CLIENT
+    where CLIENT_KEY = #{clientKey,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClient">
+    delete from CIF_CLIENT
+    where CLIENT_KEY = #{clientKey,jdbcType=VARCHAR}
+  </delete>
+  <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClient">
+    update CIF_CLIENT
+    <set>
+      <if test="clientNo != null">
+        CLIENT_NO = #{clientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="globalId != null">
+        GLOBAL_ID = #{globalId,jdbcType=VARCHAR},
+      </if>
+      <if test="globalIdType != null">
+        GLOBAL_ID_TYPE = #{globalIdType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientType != null">
+        CLIENT_TYPE = #{clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientName != null">
+        CLIENT_NAME = #{clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        LOCATION = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="acctExec != null">
+        ACCT_EXEC = #{acctExec,jdbcType=VARCHAR},
+      </if>
+      <if test="countryLoc != null">
+        COUNTRY_LOC = #{countryLoc,jdbcType=VARCHAR},
+      </if>
+      <if test="stateLoc != null">
+        STATE_LOC = #{stateLoc,jdbcType=VARCHAR},
+      </if>
+      <if test="clientCity != null">
+        CLIENT_CITY = #{clientCity,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCitizen != null">
+        COUNTRY_CITIZEN = #{countryCitizen,jdbcType=VARCHAR},
+      </if>
+      <if test="narrative != null">
+        NARRATIVE = #{narrative,jdbcType=VARCHAR},
+      </if>
+      <if test="postalCode != null">
+        POSTAL_CODE = #{postalCode,jdbcType=VARCHAR},
+      </if>
+      <if test="creationUser != null">
+        CREATION_USER = #{creationUser,jdbcType=VARCHAR},
+      </if>
+      <if test="creationDate != null">
+        CREATION_DATE = #{creationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE = #{updateDate,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where CLIENT_KEY = #{clientKey,jdbcType=VARCHAR}
+  </update>
+  <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CifClient">
+    insert into CIF_CLIENT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="clientKey != null">
+        CLIENT_KEY,
+      </if>
+      <if test="clientNo != null">
+        CLIENT_NO,
+      </if>
+      <if test="globalId != null">
+        GLOBAL_ID,
+      </if>
+      <if test="globalIdType != null">
+        GLOBAL_ID_TYPE,
+      </if>
+      <if test="clientType != null">
+        CLIENT_TYPE,
+      </if>
+      <if test="clientName != null">
+        CLIENT_NAME,
+      </if>
+      <if test="location != null">
+        LOCATION,
+      </if>
+      <if test="acctExec != null">
+        ACCT_EXEC,
+      </if>
+      <if test="countryLoc != null">
+        COUNTRY_LOC,
+      </if>
+      <if test="stateLoc != null">
+        STATE_LOC,
+      </if>
+      <if test="clientCity != null">
+        CLIENT_CITY,
+      </if>
+      <if test="countryCitizen != null">
+        COUNTRY_CITIZEN,
+      </if>
+      <if test="narrative != null">
+        NARRATIVE,
+      </if>
+      <if test="postalCode != null">
+        POSTAL_CODE,
+      </if>
+      <if test="creationUser != null">
+        CREATION_USER,
+      </if>
+      <if test="creationDate != null">
+        CREATION_DATE,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="clientKey != null">
+        #{clientKey,jdbcType=VARCHAR},
+      </if>
+      <if test="clientNo != null">
+        #{clientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="globalId != null">
+        #{globalId,jdbcType=VARCHAR},
+      </if>
+      <if test="globalIdType != null">
+        #{globalIdType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientType != null">
+        #{clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientName != null">
+        #{clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="acctExec != null">
+        #{acctExec,jdbcType=VARCHAR},
+      </if>
+      <if test="countryLoc != null">
+        #{countryLoc,jdbcType=VARCHAR},
+      </if>
+      <if test="stateLoc != null">
+        #{stateLoc,jdbcType=VARCHAR},
+      </if>
+      <if test="clientCity != null">
+        #{clientCity,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCitizen != null">
+        #{countryCitizen,jdbcType=VARCHAR},
+      </if>
+      <if test="narrative != null">
+        #{narrative,jdbcType=VARCHAR},
+      </if>
+      <if test="postalCode != null">
+        #{postalCode,jdbcType=VARCHAR},
+      </if>
+      <if test="creationUser != null">
+        #{creationUser,jdbcType=VARCHAR},
+      </if>
+      <if test="creationDate != null">
+        #{creationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectCifClientByClientNo" parameterType="java.util.Map" resultType="com.dcits.ensemble.dbmanage.dbmodel.CifClient">
+    select *
+    from CIF_CLIENT
+    where CLIENT_NO = #{clientNo,jdbcType=VARCHAR}
+  </select>
+</mapper>

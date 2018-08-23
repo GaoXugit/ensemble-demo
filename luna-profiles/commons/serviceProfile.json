@@ -1,0 +1,22 @@
+[
+	{
+		"abstractServicePackage":"com.dcits.ensemble.business.AbstractService",
+		"api":"modules/ensemble-{moduleName}/api",
+		"apiPackage":"com.dcits.ensemble.{moduleName}.api.mbsdcore",
+		"appName":"ensemble",
+		"consumer":"galaxy-consumer.xml",
+		"id":"6d93cbcae9d54a629740ed2cda077780",
+		"modelPackage":"com.dcits.ensemble.{moduleName}.model.mbsdcore",
+		"online":"modules/ensemble-{moduleName}/online",
+		"provider":"galaxy-provider.xml",
+		"requestPackage":"com.dcits.galaxy.common.data.Request",
+		"resourcePath":"src/main/resources/META-INF/spring",
+		"responsePackage":"com.dcits.galaxy.base.data.Response",
+		"scpMappingPath":"",
+		"scpServiceModule":"",
+		"servicePackage":"com.dcits.ensemble.{moduleName}.service.mbsdcore",
+		"srcPath":"src/main/java",
+		"striaRelativePath":"luna-profiles/stria",
+		"valid":true
+	}
+]

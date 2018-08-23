@@ -1,0 +1,9 @@
+{
+	"code":"CREATION_USER",
+	"comment":"创建用户",
+	"dataType":"Varchar",
+	"id":"b450a949bbb146d8911057b5ae4518e8",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

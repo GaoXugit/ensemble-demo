@@ -1,0 +1,9 @@
+{
+	"code":"BRANCH",
+	"comment":"开户行",
+	"dataType":"Varchar",
+	"id":"391ddfbd5cf0490b963470f0425f0166",
+	"lengths":20,
+	"precision":0,
+	"valid":true
+}

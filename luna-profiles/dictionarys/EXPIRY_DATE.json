@@ -1,0 +1,9 @@
+{
+	"code":"EXPIRY_DATE",
+	"comment":"到期日期",
+	"dataType":"Varchar",
+	"id":"99f99e12896c4f8989d529634d5bb0a2",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

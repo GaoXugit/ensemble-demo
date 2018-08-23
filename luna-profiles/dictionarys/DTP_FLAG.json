@@ -1,0 +1,9 @@
+{
+	"code":"DTP_FLAG",
+	"comment":"全局事物管理开关",
+	"dataType":"Varchar",
+	"id":"f0661e2384934f04bcee11bd602edafb",
+	"lengths":1,
+	"precision":0,
+	"valid":true
+}

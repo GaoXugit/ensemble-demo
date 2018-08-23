@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.dcits.ensemble.demo</groupId>
+		<artifactId>ensemble-demo</artifactId>
+		<version>1.5.3-SNAPSHOT</version>
+		<relativePath>../../</relativePath>
+	</parent>
+	<artifactId>ensemble-integration</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>online-all-integration</module>
+		<module>online-connector-integration</module>
+		<module>online-cl-integration</module>
+		<module>online-rb-integration</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>commons-httpclient</groupId>
+				<artifactId>commons-httpclient</artifactId>
+				<version>3.1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>ojdbc14</groupId>
+				<artifactId>ojdbc14</artifactId>
+				<version>10.2.0.5</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

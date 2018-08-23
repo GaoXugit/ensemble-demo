@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dcits.ensemble.rb.demo.dao.DemoAcctDao">
+  <!-- Created by Tim on 2015/09/26 10:24:57. -->
+  <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct" resultType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    select *
+    from demo_acct
+    where UUID = #{uuid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    delete from demo_acct
+    where UUID = #{uuid,jdbcType=VARCHAR}
+  </delete>
+  <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    update demo_acct
+    <set>
+      <if test="acctNo != null">
+        ACCT_NO = #{acctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="acctName != null">
+        ACCT_NAME = #{acctName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=VARCHAR},
+      </if>
+      <if test="bal != null">
+        BAL = #{bal,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where UUID = #{uuid,jdbcType=VARCHAR}
+  </update>
+  <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    insert into demo_acct
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        UUID,
+      </if>
+      <if test="acctNo != null">
+        ACCT_NO,
+      </if>
+      <if test="acctName != null">
+        ACCT_NAME,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="bal != null">
+        BAL,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="acctNo != null">
+        #{acctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="acctName != null">
+        #{acctName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=VARCHAR},
+      </if>
+      <if test="bal != null">
+        #{bal,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectAcctInfoByPage" parameterType="ParameterWrapper" resultType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    select *
+    from demo_acct
+    where ACCT_NO = #{baseParam.acctNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAcctInfoByAcctNo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct" resultType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    select *
+    from demo_acct
+    where ACCT_NO = #{acctNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAcctBal" parameterType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct" resultType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    select bal
+    from demo_acct
+    where ACCT_NO = #{acctNo,jdbcType=VARCHAR} for update
+  </select>
+  <select id="selectAcctInfoByName" parameterType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct" resultType="com.dcits.ensemble.dbmanage.dbmodel.DemoAcct">
+    select *
+    from demo_acct
+    where ACCT_NAME = #{acctName,jdbcType=VARCHAR}
+  </select>
+</mapper>

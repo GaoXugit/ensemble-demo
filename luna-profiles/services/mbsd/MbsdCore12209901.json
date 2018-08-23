@@ -1,0 +1,28 @@
+{
+	"comment":"@author Tim",
+	"hasAppHeader":false,
+	"hasLocalHeader":false,
+	"hasSysHeader":true,
+	"id":"55d7941ac0a24c26af3bd212478ebd9c",
+	"inArgs":[],
+	"messageCode":"9901",
+	"messageTypeId":"7efbf07bffb8438ebeee8ac3e53fa058",
+	"outArgs":[
+		{
+			"comment":"批处理流水号",
+			"dataType":"Varchar",
+			"id":"fa3562ca24a441ca8069693623dd7912",
+			"length":0,
+			"maxLength":0,
+			"minLength":0,
+			"name":"BATCH_NO",
+			"notNull":false,
+			"precision":0,
+			"serialNo":"1",
+			"valid":true
+		}
+	],
+	"serviceCodeId":"383569c3978c443ca66d9fa2f46c4de4",
+	"serviceModuleId":"2fa24eb1f32f43768d07fa27f3664106",
+	"valid":true
+}

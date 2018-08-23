@@ -1,0 +1,9 @@
+{
+	"code":"LOCATION",
+	"comment":"地址",
+	"dataType":"Varchar",
+	"id":"cdb62442598d443ca2a403cb526bf8a9",
+	"lengths":140,
+	"precision":0,
+	"valid":true
+}
