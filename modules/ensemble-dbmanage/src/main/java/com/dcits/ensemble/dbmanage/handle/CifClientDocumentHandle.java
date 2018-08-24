@@ -21,7 +21,6 @@ public class CifClientDocumentHandle {
             cifClientDocumentDao.insert(document);
         }
     }
-
     public void autoUpdate(CifClientDocument cifClientDocument) {
         CifClientDocument oldCifClientDocument = cifClientDocumentDao.selectByPrimaryKey(new CifClientDocument(), cifClientDocument.getClientNo(), cifClientDocument.getDocumentType());
         if (null == oldCifClientDocument) {
