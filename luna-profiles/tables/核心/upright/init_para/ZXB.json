@@ -1,0 +1,36 @@
+{
+	"attr":[
+		{
+			"code":"AAA",
+			"dictionary":"AAA",
+			"id":"9a56f50e5e624aa3be124bb839bcca92",
+			"m":true,
+			"p":false,
+			"valid":true
+		},
+		{
+			"code":"ACCT_EXEC",
+			"dictionary":"ACCT_EXEC",
+			"id":"2c7945bf5da14eee8ea68581c0eabe44",
+			"m":true,
+			"p":false,
+			"valid":true
+		},
+		{
+			"code":"ACCT_NAME",
+			"dictionary":"ACCT_NAME",
+			"id":"d3661e466b0c43cda2c1d7bb896ffff5",
+			"m":true,
+			"p":false,
+			"valid":true
+		}
+	],
+	"code":"zxb",
+	"comment":"最新版",
+	"dbType":"upright",
+	"id":"c25305807be74aca9521e84d2da045a6",
+	"parameter":"init_para",
+	"serviceModuleId":"ce4b74032f814c698566847b0c427c2f",
+	"system":"核心",
+	"valid":true
+}

@@ -1,10 +1,10 @@
 [
 	{
 		"daoModule":"modules/ensemble-dbmanage",
-		"daoResource":"com.dcits.ensemble.demo.dbmanage.dao",
+		"daoResource":"com.dcits.ensemble.dbmanage.dao",
 		"id":"6f420dc94ced4ab3ab2ff2432443879f",
 		"mapperModule":"modules/ensemble-dbmanage",
-		"mapperResource":"com.dcits.ensemble.demo.dbmanage.dbmodel",
+		"mapperResource":"com.dcits.ensemble.dbmanage.dbmodel",
 		"repoApiModule":"",
 		"repoApiPackage":"",
 		"repoImpModule":"",

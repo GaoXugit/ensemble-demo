@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dcits.ensemble.dbmanage.dao.ZxbDao">
+    <sql id="Base_Column_List" >
+        AAA, ACCT_EXEC, ACCT_NAME
+    </sql>
+    <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Zxb">
+        insert into ZXB
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="aaa != null">
+                AAA,
+            </if>
+            <if test="acctExec != null">
+                ACCT_EXEC,
+            </if>
+            <if test="acctName != null">
+                ACCT_NAME,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="aaa != null">
+              #{aaa,jdbcType=VARCHAR},
+            </if>
+            <if test="acctExec != null">
+              #{acctExec,jdbcType=VARCHAR},
+            </if>
+            <if test="acctName != null">
+              #{acctName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Zxb"
+            resultType="com.dcits.ensemble.dbmanage.dbmodel.Zxb">
+        select
+        <include refid="Base_Column_List" />
+          from ZXB
+    </select>
+    <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Zxb">
+        update ZXB
+        <set>
+            <if test="aaa != null">
+                AAA = #{aaa,jdbcType=VARCHAR},
+            </if>
+            <if test="acctExec != null">
+                ACCT_EXEC = #{acctExec,jdbcType=VARCHAR},
+            </if>
+            <if test="acctName != null">
+                ACCT_NAME = #{acctName,jdbcType=VARCHAR},
+            </if>
+        </set>
+    </update>
+    <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Zxb">
+        delete from ZXB
+    </delete>
+    <select id="selectByAAA" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Zxb" resultType="com.dcits.ensemble.dbmanage.dbmodel.Zxb">
+        select *
+        from zxb
+        where AAA = #{AAA,jdbcType=VARCHAR}
+    </select>
+</mapper>

@@ -1,0 +1,33 @@
+{
+	"SYS_HEAD":{
+		"AUTH_USER_ID":"",
+		"APPR_FLAG":"E",
+		"SERVER_ID":"127.0.0.1",
+		"SERVICE_CODE":"MbsdCore",
+		"TRAN_TYPE":"",
+		"USER_ID":"CP0101",
+		"APPR_USER_ID":"",
+		"TRAN_TIMESTAMP":"159301",
+		"AUTH_FLAG":"N",
+		"PROGRAM_ID":"RB31",
+		"SEQ_NO":"16",
+		"SOURCE_TYPE":"MT",
+		"AUTH_PASSWORD":"",
+		"MODULE_ID":"RB",
+		"DEST_BRANCH_NO":"2400",
+		"MESSAGE_TYPE":"1400",
+		"REVERSAL_TRAN_TYPE":"",
+		"THREAD_NO":"qtp1995837782-16",
+		"WS_ID":"",
+		"TRAN_MODE":"ONLINE",
+		"USER_LANG":"CHINESE",
+		"MESSAGE_CODE":"0201",
+		"SOURCE_BRANCH_NO":"1400",
+		"TRAN_DATE":"20180625",
+		"BRANCH_ID":"1400",
+		"TRAN_CODE":""
+	},
+	"BODY":{
+		"ACCT_NO":"111"
+	}
+}

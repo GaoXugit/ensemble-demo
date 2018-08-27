@@ -58,8 +58,9 @@ public class Core10009102 extends AbstractService implements ICore10009102 {
 		ad.setCreateTime(DateUtils.getDateTime("HHmmssSSS"));
 		doSubmit(ad);
 		BeanUtils.copy(ad,out);
-		if (false)
+		if (false) {
 			throw new BusinessException("999999", "aaaaaaaaa");
+		}
 		return new BeanResult(out);
 	}
 	@SubmitLog

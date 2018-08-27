@@ -28,4 +28,7 @@
     <!-- 贷款还款（demo） -->
     <dcits:service interface="com.dcits.ensemble.cl.api.mbsdcore.ICore10000204"
                    ref="core10000204"/>
+ 	<!-- 查询交易 -->
+	<dcits:service interface="com.dcits.ensemble.cl.api.mbsdcore.ICore14000205"
+		           ref="core14000205" />
 </beans>

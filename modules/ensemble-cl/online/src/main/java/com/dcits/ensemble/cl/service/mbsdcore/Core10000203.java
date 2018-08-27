@@ -54,8 +54,9 @@ public class Core10000203 extends AbstractService implements ICore10000203 {
     public BeanResult drawdown(String acctNo, BigDecimal bal) {
         Core10000203Out out = new Core10000203Out();
         DemoClacct demoAcct = demoClacctDao.getAcctInfoByAcctNo(acctNo);
-        if (BusinessUtils.isNull(demoAcct))
+        if (BusinessUtils.isNull(demoAcct)) {
             throw BusinessUtils.createBusinessException("RB1001");
+        }
 
         DemoClacct update = new DemoClacct();
         update.setUuid(demoAcct.getUuid());

@@ -33,4 +33,8 @@
     <dcits:reference id="MbsdCore-1000-0204"
                      interface="com.dcits.ensemble.cl.api.mbsdcore.ICore10000204" check="false">
     </dcits:reference>
+    <!-- 查询交易 -->
+	<dcits:reference id="MbsdCore-1400-0205"
+		             interface="com.dcits.ensemble.cl.api.mbsdcore.ICore14000205" check="false">
+	</dcits:reference>
 </beans>

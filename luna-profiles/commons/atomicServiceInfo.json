@@ -128,6 +128,22 @@
 		"valid":true
 	},
 	{
+		"argsClazz":"com.dcits.ensemble.cl.model.mbsdcore.Core14000205In",
+		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
+		"atomicServiceType":"ATOM",
+		"clazz":"com.dcits.ensemble.cl.service.mbsdcore.Core14000205",
+		"groupName":"DEFAULT",
+		"id":"984ce360bf70494db839187fe1accac1",
+		"identify":"查询账户信息",
+		"inArgType":"com.dcits.ensemble.cl.model.mbsdcore.Core14000205In",
+		"method":"query",
+		"methodName":"query",
+		"name":"查询账户信息",
+		"serviceType":"SPRING BEAN",
+		"type":"atom",
+		"valid":true
+	},
+	{
 		"argsClazz":"java.lang.String",
 		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
 		"atomicServiceType":"CHECK",

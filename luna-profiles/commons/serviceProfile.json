@@ -3,7 +3,7 @@
 		"abstractServicePackage":"com.dcits.ensemble.business.AbstractService",
 		"api":"modules/ensemble-{moduleName}/api",
 		"apiPackage":"com.dcits.ensemble.{moduleName}.api.mbsdcore",
-		"appName":"ensemble",
+		"appName":"",
 		"consumer":"galaxy-consumer.xml",
 		"id":"6d93cbcae9d54a629740ed2cda077780",
 		"modelPackage":"com.dcits.ensemble.{moduleName}.model.mbsdcore",
