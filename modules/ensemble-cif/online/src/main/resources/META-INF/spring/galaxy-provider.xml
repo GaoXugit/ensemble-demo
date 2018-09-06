@@ -26,4 +26,7 @@
 	<!-- 客户信息查询 -->
 	<dcits:service interface="com.dcits.ensemble.cif.api.mbsdcore.ICore14008001"
 		ref="inq14008001" />
+ 	<!-- 1111 -->
+	<dcits:service interface="com.dcits.ensemble.cif.api.mbsdcore.ICore14009999"
+		           ref="core14009999" />
 </beans>

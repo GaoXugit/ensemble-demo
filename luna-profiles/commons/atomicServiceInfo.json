@@ -1,5 +1,37 @@
 [
 	{
+		"argsClazz":"com.dcits.ensemble.rb.model.mbsdcore.Core14003006In",
+		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
+		"atomicServiceType":"ATOM",
+		"clazz":"com.dcits.ensemble.rb.service.mbsdcore.Core14003006",
+		"groupName":"DEFAULT",
+		"id":"aef4433b5ba74be2a60e3a19a5dafab3",
+		"identify":"TEST",
+		"inArgType":"com.dcits.ensemble.rb.model.mbsdcore.Core14003006In",
+		"method":"query",
+		"methodName":"query",
+		"name":"TEST",
+		"serviceType":"SPRING BEAN",
+		"type":"atom",
+		"valid":true
+	},
+	{
+		"argsClazz":"com.dcits.ensemble.rb.model.mbsdcore.Core12008811In",
+		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
+		"atomicServiceType":"ATOM",
+		"clazz":"com.dcits.ensemble.rb.service.mbsdcore.Core12008811",
+		"groupName":"DEFAULT",
+		"id":"a64f631741b34c1086ab5a3c32da15b3",
+		"identify":"createcard",
+		"inArgType":"com.dcits.ensemble.rb.model.mbsdcore.Core12008811In",
+		"method":"createcard",
+		"methodName":"createcard",
+		"name":"createcard",
+		"serviceType":"SPRING BEAN",
+		"type":"atom",
+		"valid":true
+	},
+	{
 		"argsClazz":"com.dcits.ensemble.cif.model.mbsdcore.Core12009100In",
 		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
 		"atomicServiceType":"ATOM",

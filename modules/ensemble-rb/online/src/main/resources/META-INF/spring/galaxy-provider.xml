@@ -35,4 +35,10 @@
     <!-- 批量文件处理RPC服务发布 -->
     <dcits:service interface="com.dcits.ensemble.rb.api.inner.IFileProcess"
                    ref="fileProcess"/>
+ 	<!-- 账户查询服务 -->
+	<dcits:service interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14003006"
+		           ref="core14003006" />
+ 	<!-- 开卡 -->
+	<dcits:service interface="com.dcits.ensemble.rb.api.mbsdcore.ICore12008811"
+		           ref="core12008811" />
 </beans>

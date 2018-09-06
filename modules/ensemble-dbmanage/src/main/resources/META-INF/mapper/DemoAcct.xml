@@ -104,4 +104,9 @@
     from demo_acct
     where ACCT_NAME = #{acctName,jdbcType=VARCHAR}
   </select>
+  <select id="selectAcctInfoByAcctNoList" resultType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo"
+          parameterType="java.util.Map">
+    select *
+    from demo_acct
+    where ACCT_NO = #{acctNo,jdbcType=VARCHAR}</select>
 </mapper>

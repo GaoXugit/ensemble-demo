@@ -30,4 +30,8 @@
 	<dcits:reference id="MbsdCore-1400-8001"
 		interface="com.dcits.ensemble.cif.api.mbsdcore.ICore14008001" check="false">
 	</dcits:reference>
+    <!-- 1111 -->
+	<dcits:reference id="MbsdCore-1400-9999"
+		             interface="com.dcits.ensemble.cif.api.mbsdcore.ICore14009999" check="false">
+	</dcits:reference>
 </beans>

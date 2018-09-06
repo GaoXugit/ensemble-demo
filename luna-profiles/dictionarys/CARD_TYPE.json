@@ -1,0 +1,9 @@
+{
+	"code":"CARD_TYPE",
+	"comment":"卡种类",
+	"dataType":"Integer",
+	"id":"2bb2d592270c4eeeb9344fc62f7181c6",
+	"lengths":1,
+	"precision":0,
+	"valid":true
+}

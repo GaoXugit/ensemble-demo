@@ -6,8 +6,7 @@
 	"id":"4f56ad759e834e2aa6abb85649ffb853",
 	"inArgs":[
 		{
-			"comment":"账号",
-			"dataType":"Varchar",
+			"dataDictId":"a4216b90ce2843b49706e1167f72e86d",
 			"id":"f5ed549b280545008d4d77e7759901fc",
 			"length":0,
 			"maxLength":0,
@@ -16,6 +15,18 @@
 			"notNull":true,
 			"precision":0,
 			"serialNo":"1",
+			"valid":true
+		},
+		{
+			"dataDictId":"12ba0b3b1eee4d7286fbd8814f678660",
+			"id":"3cd980b5146c46498c8cf5b7a9a80b5c",
+			"length":0,
+			"maxLength":0,
+			"minLength":0,
+			"name":"AGREEMENT_STATUS",
+			"notNull":false,
+			"precision":0,
+			"serialNo":"2",
 			"valid":true
 		}
 	],

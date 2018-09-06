@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dcits.ensemble.dbmanage.dao.GaoxuDemoDao">
+    <sql id="Base_Column_List" >
+        ACCT_NO, ACCT_NAME, BAL, CREATE_TIME, CREATE_DATE
+    </sql>
+    <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo">
+        insert into GAOXU_DEMO
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="acctNo != null">
+                ACCT_NO,
+            </if>
+            <if test="acctName != null">
+                ACCT_NAME,
+            </if>
+            <if test="bal != null">
+                BAL,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="acctNo != null">
+              #{acctNo,jdbcType=VARCHAR},
+            </if>
+            <if test="acctName != null">
+              #{acctName,jdbcType=VARCHAR},
+            </if>
+            <if test="bal != null">
+              #{bal,jdbcType=DECIMAL},
+            </if>
+            <if test="createTime != null">
+              #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+              #{createDate,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo"
+            resultType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo">
+        select
+        <include refid="Base_Column_List" />
+          from GAOXU_DEMO
+         where ACCT_NO = #{acctNo,jdbcType=VARCHAR}
+    </select>
+    <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo">
+        update GAOXU_DEMO
+        <set>
+            <if test="acctName != null">
+                ACCT_NAME = #{acctName,jdbcType=VARCHAR},
+            </if>
+            <if test="bal != null">
+                BAL = #{bal,jdbcType=DECIMAL},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE = #{createDate,jdbcType=VARCHAR},
+            </if>
+        </set>
+         where ACCT_NO = #{acctNo,jdbcType=VARCHAR}
+    </update>
+    <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo">
+        delete from GAOXU_DEMO
+         where ACCT_NO = #{acctNo,jdbcType=VARCHAR}
+    </delete>
+    <select id="selectAcctInfoByAcctNo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo" resultType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo">
+    select *
+    from gaoxu_demo
+    where ACCT_NO = #{acctNo,jdbcType=VARCHAR}
+  </select>
+    <select id="selectAcctInfoByAcctNoList" resultType="com.dcits.ensemble.dbmanage.dbmodel.GaoxuDemo"
+            parameterType="java.util.Map">
+    select *
+    from gaoxu_demo
+    where ACCT_NO = #{acctNo,jdbcType=VARCHAR}</select>
+</mapper>

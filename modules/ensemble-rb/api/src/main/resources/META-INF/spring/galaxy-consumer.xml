@@ -48,4 +48,12 @@
         -->
         <dcits:method name="file9901Process" async="true" sent="true" return="false"/>
     </dcits:reference>
+    <!-- 账户查询服务 -->
+	<dcits:reference id="MbsdCore-1400-3006"
+		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14003006" check="false">
+	</dcits:reference>
+    <!-- 开卡 -->
+	<dcits:reference id="MbsdCore-1200-8811"
+		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore12008811" check="false">
+	</dcits:reference>
 </beans>

@@ -4,6 +4,7 @@ import com.dcits.ensemble.dbmanage.dbmodel.DemoAcct;
 import com.dcits.galaxy.business.dao.BaseDao;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -22,7 +23,8 @@ public class DemoAcctDao extends BaseDao {
         return DEFAULT_NAME_SPACE;
     }
 
-    public DemoAcct getAcctInfoByAcctNo(String acctNo) {
+
+    public DemoAcct  getAcctInfoByAcctNo(String acctNo) {
         DemoAcct da = new DemoAcct();
         da.setAcctNo(acctNo);
         return super.selectOne(DEFAULT_NAME_SPACE, "selectAcctInfoByAcctNo", da);
@@ -49,4 +51,11 @@ public class DemoAcctDao extends BaseDao {
         da.setAcctName(acctName);
         return super.selectOne(DEFAULT_NAME_SPACE, "selectAcctInfoByName", da);
     }
+
+    public List<DemoAcct> getAcctInfoByAcctNoList(String acctNo) {
+        HashMap<String ,String> map = new HashMap<>();
+        map.put("acctNo",acctNo);
+        return super.selectList("selectAcctInfoByAcctNoList", map);
+    }
+
 }

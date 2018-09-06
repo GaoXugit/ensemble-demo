@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dcits.ensemble.dbmanage.dao.CdCardDao">
+    <sql id="Base_Column_List" >
+        CD_ID, PASSWORD, USER_NAME, DOCUMENT_ID, BAL, CREATE_TIME, CARD_TYPE
+    </sql>
+    <!--进行开卡服务，insert插入操作并判断传来的各项数据是否为空-->
+    <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+        insert into CD_CARD
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cdId != null">
+                CD_ID,
+            </if>
+            <if test="password != null">
+                PASSWORD,
+            </if>
+            <if test="userName != null">
+                USER_NAME,
+            </if>
+            <if test="documentId != null">
+                DOCUMENT_ID,
+            </if>
+            <if test="bal != null">
+                BAL,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="cardType != null">
+                CARD_TYPE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cdId != null">
+              #{cdId,jdbcType=DECIMAL},
+            </if>
+            <if test="password != null">
+              #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null">
+              #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="documentId != null">
+              #{documentId,jdbcType=VARCHAR},
+            </if>
+            <if test="bal != null">
+              #{bal,jdbcType=DECIMAL},
+            </if>
+            <if test="createTime != null">
+              #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="cardType != null">
+              #{cardType,jdbcType=DECIMAL},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard"
+            resultType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+        select
+        <include refid="Base_Column_List" />
+          from CD_CARD
+         where CD_ID = #{cdId,jdbcType=DECIMAL}
+    </select>
+    <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+        update CD_CARD
+        <set>
+            <if test="password != null">
+                PASSWORD = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null">
+                USER_NAME = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="documentId != null">
+                DOCUMENT_ID = #{documentId,jdbcType=VARCHAR},
+            </if>
+            <if test="bal != null">
+                BAL = #{bal,jdbcType=DECIMAL},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="cardType != null">
+                CARD_TYPE = #{cardType,jdbcType=DECIMAL},
+            </if>
+        </set>
+         where CD_ID = #{cdId,jdbcType=DECIMAL}
+    </update>
+    <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+        delete from CD_CARD
+         where CD_ID = #{cdId,jdbcType=DECIMAL}
+    </delete>
+</mapper>

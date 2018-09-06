@@ -12,6 +12,12 @@
 		"valid":true
 	},
 	{
+		"comment":"查询",
+		"id":"a55bb56f482d47d48e762e662b09b0ce",
+		"name":"gx",
+		"valid":true
+	},
+	{
 		"comment":"存款",
 		"id":"2fa24eb1f32f43768d07fa27f3664106",
 		"name":"rb",

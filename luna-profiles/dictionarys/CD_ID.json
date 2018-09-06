@@ -1,0 +1,9 @@
+{
+	"code":"CD_ID",
+	"comment":"银行卡号",
+	"dataType":"Integer",
+	"id":"896c44d9f1e448b6b07896bf35df7d98",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}
