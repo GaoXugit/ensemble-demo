@@ -3,7 +3,7 @@
  * <p>Description: 开卡</p>
  * <p>Copyright: Copyright (c) 2014-2018</p>
  * <p>Company: dcits</p>
- * <p>2018-09-05 19:32:35</p>
+ * <p>2018-09-07 11:19:47</p>
  * @author Author
  * @version v1.0
  */
@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 
 /***
  * 开卡</br>
- * 2018-09-05 19:32:35
+ * 2018-09-07 11:19:47
  *
  * @version v1.0
  * @since v1.0
@@ -65,23 +65,21 @@ public class Core12008811In extends Request {
 		private String password;
 
 		/**
-		 * 确认密码
+		 * 确认密码<br>
+		 * RPASSWORD<br>
+		 * seqNo:2<br>
+		 * dataType:String<br>
+		 * length:6<br>
+		 * scale:0<br>
+		 * cons:
 		 */
-		@V(desc = "密码", notNull = true)
-		private String Rpassword;
-
-		public String getRpassword() {
-			return Rpassword;
-		}
-
-		public void setRpassword(String rpassword) {
-			Rpassword = rpassword;
-		}
+        @V(desc = "确认密码")
+		private String rpassword;
 
 		/**
 		 * 客户姓名<br>
 		 * USER_NAME<br>
-		 * seqNo:2<br>
+		 * seqNo:3<br>
 		 * dataType:String<br>
 		 * length:50<br>
 		 * scale:0<br>
@@ -93,7 +91,7 @@ public class Core12008811In extends Request {
 		/**
 		 * 证件号码<br>
 		 * DOCUMENT_ID<br>
-		 * seqNo:3<br>
+		 * seqNo:4<br>
 		 * dataType:String<br>
 		 * length:25<br>
 		 * scale:0<br>
@@ -105,7 +103,7 @@ public class Core12008811In extends Request {
 		/**
 		 * 余额<br>
 		 * BAL<br>
-		 * seqNo:4<br>
+		 * seqNo:5<br>
 		 * dataType:Double<br>
 		 * length:17<br>
 		 * scale:2<br>
@@ -114,13 +112,12 @@ public class Core12008811In extends Request {
         @V(desc = "余额", notNull = true)
 		private BigDecimal bal;
 
-
 		/**
 		 * 卡种类<br>
 		 * CARD_TYPE<br>
 		 * seqNo:6<br>
 		 * dataType:Integer<br>
-		 * length:1<br>
+		 * length:10<br>
 		 * scale:0<br>
 		 * cons:
 		 */
@@ -141,6 +138,22 @@ public class Core12008811In extends Request {
 		 */
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		/**
+		 * 确认密码<br>
+		 * RPASSWORD
+		 */
+		public String getRpassword() {
+			return rpassword;
+		}
+
+		/**
+		 * 确认密码<br>
+		 * RPASSWORD
+		 */
+		public void setRpassword(String rpassword) {
+			this.rpassword = rpassword;
 		}
 
 		/**
@@ -190,7 +203,6 @@ public class Core12008811In extends Request {
 		public void setBal(BigDecimal bal) {
 			this.bal = bal;
 		}
-
 
 		/**
 		 * 卡种类<br>

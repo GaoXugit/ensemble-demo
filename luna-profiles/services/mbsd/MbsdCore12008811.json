@@ -18,6 +18,18 @@
 			"valid":true
 		},
 		{
+			"dataDictId":"8492a31f357845b2b92f3662cd6cab29",
+			"id":"b39572d52d874751b30911dec15b50fe",
+			"length":0,
+			"maxLength":0,
+			"minLength":0,
+			"name":"RPASSWORD",
+			"notNull":false,
+			"precision":0,
+			"serialNo":"2",
+			"valid":true
+		},
+		{
 			"dataDictId":"85074a0a6c024868819d36a684a57a83",
 			"id":"181aa2539de74f0799a3da9503b9d8be",
 			"length":0,
@@ -26,7 +38,7 @@
 			"name":"USER_NAME",
 			"notNull":true,
 			"precision":0,
-			"serialNo":"2",
+			"serialNo":"3",
 			"valid":true
 		},
 		{
@@ -38,7 +50,7 @@
 			"name":"DOCUMENT_ID",
 			"notNull":true,
 			"precision":0,
-			"serialNo":"3",
+			"serialNo":"4",
 			"valid":true
 		},
 		{
@@ -50,23 +62,11 @@
 			"name":"BAL",
 			"notNull":true,
 			"precision":0,
-			"serialNo":"4",
-			"valid":true
-		},
-		{
-			"dataDictId":"5a79603f998d42c89b794ecc7e47af0b",
-			"id":"b1c9f4c59207495f9ec5d70fc7c06d97",
-			"length":0,
-			"maxLength":0,
-			"minLength":0,
-			"name":"CREATE_TIME",
-			"notNull":true,
-			"precision":0,
 			"serialNo":"5",
 			"valid":true
 		},
 		{
-			"dataDictId":"2bb2d592270c4eeeb9344fc62f7181c6",
+			"dataDictId":"120320b9a0d1418daec989984682bc67",
 			"id":"ec65ead5aa774f96a80a6c534ffe7dbd",
 			"length":0,
 			"maxLength":0,
