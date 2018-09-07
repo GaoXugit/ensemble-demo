@@ -44,4 +44,10 @@
  	<!-- 转账服务 -->
 	<dcits:service interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008841"
 		           ref="core14008841" />
+ 	<!-- 取款服务 -->
+	<dcits:service interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008832"
+		           ref="core14008832" />
+ 	<!-- 存款服务 -->
+	<dcits:service interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008833"
+		           ref="core14008833" />
 </beans>

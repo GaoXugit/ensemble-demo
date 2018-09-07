@@ -60,4 +60,12 @@
 	<dcits:reference id="MbsdCore-1400-8841"
 		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008841" check="false">
 	</dcits:reference>
+    <!-- 取款服务 -->
+	<dcits:reference id="MbsdCore-1400-8832"
+		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008832" check="false">
+	</dcits:reference>
+    <!-- 存款服务 -->
+	<dcits:reference id="MbsdCore-1400-8833"
+		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008833" check="false">
+	</dcits:reference>
 </beans>

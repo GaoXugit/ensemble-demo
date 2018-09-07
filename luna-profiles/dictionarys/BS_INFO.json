@@ -1,0 +1,9 @@
+{
+	"code":"BS_INFO",
+	"comment":"流水信息",
+	"dataType":"Varchar",
+	"id":"23a0fccdda9f47d194c39ffe81e7eb38",
+	"lengths":200,
+	"precision":0,
+	"valid":true
+}

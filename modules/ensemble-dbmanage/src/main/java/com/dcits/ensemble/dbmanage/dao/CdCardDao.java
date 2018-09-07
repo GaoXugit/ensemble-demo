@@ -79,4 +79,19 @@ public class CdCardDao extends BaseDao {
         cdCard.setCdId(cdid);
         return super.update("updateCardInfo",cdCard);
     }
+
+    //TODO 根据账号、密码查询卡信息
+    public CdCard selectCardInfo(Integer cdId, String passWord) {
+        CdCard cdCard = new CdCard();
+        cdCard.setCdId(cdId);
+        cdCard.setPassword(passWord);
+        return super.selectOne(DEFAULT_NAME_SPACE, "selectCardInfo", cdCard);
+    }
+    //TODO 根据取款金额更新卡内余额
+    public int updateUserBal(BigDecimal bal, Integer id) {
+        CdCard cdCard = new CdCard();
+        cdCard.setCdId(id);
+        cdCard.setBal(bal);
+        return update("updateToBal", cdCard);
+    }
 }
