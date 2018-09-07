@@ -1,8 +1,8 @@
 {
 	"code":"STATUS",
-	"comment":"状态A-活动，C-销户",
+	"comment":"状态",
 	"dataType":"Varchar",
-	"id":"64150ba2e72c41ff94a127c5bece118e",
+	"id":"5610aa94f61f447e9aaa3527dcab94ab",
 	"lengths":1,
 	"precision":0,
 	"valid":true

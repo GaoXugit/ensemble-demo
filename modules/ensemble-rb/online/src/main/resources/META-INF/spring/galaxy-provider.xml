@@ -41,4 +41,7 @@
  	<!-- 开卡 -->
 	<dcits:service interface="com.dcits.ensemble.rb.api.mbsdcore.ICore12008811"
 		           ref="core12008811" />
+ 	<!-- 转账服务 -->
+	<dcits:service interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008841"
+		           ref="core14008841" />
 </beans>

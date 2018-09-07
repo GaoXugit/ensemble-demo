@@ -56,4 +56,8 @@
 	<dcits:reference id="MbsdCore-1200-8811"
 		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore12008811" check="false">
 	</dcits:reference>
+    <!-- 转账服务 -->
+	<dcits:reference id="MbsdCore-1400-8841"
+		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008841" check="false">
+	</dcits:reference>
 </beans>

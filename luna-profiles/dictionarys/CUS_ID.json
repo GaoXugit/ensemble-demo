@@ -1,9 +1,9 @@
 {
 	"code":"CUS_ID",
-	"comment":"客户号",
-	"dataType":"Number",
-	"id":"1ad28e85c2df4ded9ac694e8f404b341",
-	"lengths":255,
+	"comment":"",
+	"dataType":"Integer",
+	"id":"8549d1162d5e46ffb2948ee9773261b8",
+	"lengths":10,
 	"precision":0,
 	"valid":true
 }

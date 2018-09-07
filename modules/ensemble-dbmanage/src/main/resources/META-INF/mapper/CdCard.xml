@@ -89,4 +89,20 @@
         delete from CD_CARD
          where CD_ID = #{cdId,jdbcType=DECIMAL}
     </delete>
+
+
+    <!-- 转账业务所需的卡信息查询-->
+    <select id="selectCardInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard" resultType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+        select CD_ID, PASSWORD, USER_NAME, DOCUMENT_ID, BAL, CREATE_TIME, CARD_TYPE
+        from CD_CARD
+        where CD_ID = #{cdId,jdbcType=INTEGER} and PASSWORD = #{password,jdbcType=VARCHAR}
+    </select>
+    <!--转账业务的卡余额的更新-->
+    <update id="updateCardInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+        update CD_CARD  set BAL=#{bal,jdbcType=DOUBLE}
+        where CD_ID = #{cdId,jdbcType=INTEGER}
+    </update>
+
+
+
 </mapper>

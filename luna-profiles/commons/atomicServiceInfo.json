@@ -48,6 +48,22 @@
 		"valid":true
 	},
 	{
+		"argsClazz":"com.dcits.ensemble.rb.model.mbsdcore.Core14008841In",
+		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
+		"atomicServiceType":"ATOM",
+		"clazz":"com.dcits.ensemble.rb.service.mbsdcore.Core14008841",
+		"groupName":"DEFAULT",
+		"id":"23e77dfdb7f14db394d762d0760f742e",
+		"identify":"卡转账服务",
+		"inArgType":"com.dcits.ensemble.rb.model.mbsdcore.Core14008841In",
+		"method":"getManyToOther",
+		"methodName":"getManyToOther",
+		"name":"卡转账服务",
+		"serviceType":"SPRING BEAN",
+		"type":"atom",
+		"valid":true
+	},
+	{
 		"argsClazz":"java.lang.String",
 		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
 		"atomicServiceType":"ATOM",

@@ -1,7 +1,7 @@
 {
 	"code":"PUT_WAY",
 	"comment":"取款方式",
-	"dataType":"Number",
+	"dataType":"Integer",
 	"id":"8b95d7bf9f6b41929385186507f8d42c",
 	"lengths":1,
 	"precision":0,

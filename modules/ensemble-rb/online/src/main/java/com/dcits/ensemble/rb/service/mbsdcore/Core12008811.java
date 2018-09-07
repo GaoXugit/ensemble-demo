@@ -50,23 +50,23 @@ public class Core12008811 extends AbstractService implements ICore12008811 {
 	public BeanResult createcard(Core12008811In core12008811in) {
 		Core12008811In.Body body = core12008811in.getBody();
 		Core12008811Out core14003006Out = new Core12008811Out();
-		String Password = body.getPassword();
-		String UserName = body.getUserName();
-		String DocumentId = body.getDocumentId();
-		String CreateTime = body.getCreateTime();
-		BigDecimal bal = body.getBal();
-		int CardType=body.getCardType();
+		String Password = body.getPassword();	//获取密码
+		String UserName = body.getUserName();	//获取姓名
+		String DocumentId = body.getDocumentId();	//获取身份证号
+		String CreateTime = body.getCreateTime();	//获取开卡时间
+		BigDecimal bal = body.getBal();	//获取金额
+		int CardType=body.getCardType();	//获取卡类型
 
 		if(Password.length()!=6){
-			core14003006Out.setResultInfo("密码为空或长度出错！");
+			core14003006Out.setResultInfo("密码为空或长度出错，请重新输入！");
 			return new BeanResult(core14003006Out);
 		}
 		if(BusiUtil.isNull(UserName) || UserName.length()>50){
-			core14003006Out.setResultInfo("姓名不能为空或姓名过长！");
+			core14003006Out.setResultInfo("姓名不能为空或姓名过长，请重新输入！");
 			return new BeanResult(core14003006Out);
 		}
 		if(BusiUtil.isNull(DocumentId) || DocumentId.length()!=18){
-			core14003006Out.setResultInfo("身份证号不能为空或身份证号过长！");
+			core14003006Out.setResultInfo("身份证号不能为空或身份证号过长，请重新输入！");
 			return new BeanResult(core14003006Out);
 		}
 			cdCardDao.insert(Password,UserName,DocumentId,bal,CreateTime,CardType);

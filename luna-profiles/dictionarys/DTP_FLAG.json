@@ -1,8 +1,8 @@
 {
 	"code":"DTP_FLAG",
-	"comment":"全局事物管理开关",
+	"comment":"JOBDTP开关",
 	"dataType":"Varchar",
-	"id":"f0661e2384934f04bcee11bd602edafb",
+	"id":"0cd0a2a8198f4bdcae259332bf0864ee",
 	"lengths":1,
 	"precision":0,
 	"valid":true

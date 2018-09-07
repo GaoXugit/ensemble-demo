@@ -1,0 +1,9 @@
+{
+	"code":"BS_ID",
+	"comment":"流水单号",
+	"dataType":"Integer",
+	"id":"0448a349dd724a659a3150b85f61e97c",
+	"lengths":8,
+	"precision":0,
+	"valid":true
+}

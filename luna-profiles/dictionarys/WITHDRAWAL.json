@@ -1,0 +1,9 @@
+{
+	"code":"WITHDRAWAL",
+	"comment":"取款额度",
+	"dataType":"Number",
+	"id":"dc1b594cfbe242ee9d365a4e1751fab2",
+	"lengths":17,
+	"precision":2,
+	"valid":true
+}

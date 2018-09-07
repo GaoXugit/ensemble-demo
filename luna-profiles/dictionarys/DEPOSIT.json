@@ -1,0 +1,9 @@
+{
+	"code":"DEPOSIT",
+	"comment":"存款额度",
+	"dataType":"Number",
+	"id":"302e5ec6b0d44903abe92154bb2de624",
+	"lengths":17,
+	"precision":2,
+	"valid":true
+}

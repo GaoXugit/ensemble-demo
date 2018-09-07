@@ -1,9 +1,9 @@
 {
 	"code":"SEQ_NO",
-	"comment":"序列号，采用顺序数字，表示在同一账号、账户类型、币种下的不同子账户，比如定期存款序列号",
+	"comment":"序号",
 	"dataType":"Varchar",
-	"id":"5466704f8ba046e888df30fd0b49409d",
-	"lengths":10,
+	"id":"3e14303da7464080a48be363004b2fd7",
+	"lengths":32,
 	"precision":0,
 	"valid":true
 }

@@ -29,7 +29,7 @@ public class CdCard extends AbstractBean {
      * length:8<br>
      */
     @TablePk(index = 1)
-    private BigDecimal cdId;
+    private int cdId;
 
     /**
      * 密码<br>
@@ -84,7 +84,7 @@ public class CdCard extends AbstractBean {
      * 银行卡号<br>
      * CD_ID
      */
-    public BigDecimal getCdId() {
+    public int getCdId() {
         return cdId;
     }
 
@@ -92,7 +92,7 @@ public class CdCard extends AbstractBean {
      * 银行卡号<br>
      * CD_ID
      */
-    public void setCdId(BigDecimal cdId) {
+    public void setCdId(int cdId) {
         this.cdId = cdId;
     }
     /**

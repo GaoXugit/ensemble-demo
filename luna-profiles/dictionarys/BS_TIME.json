@@ -1,0 +1,9 @@
+{
+	"code":"BS_TIME",
+	"comment":"操作流水时间",
+	"dataType":"Varchar",
+	"id":"2d35de190c6a42e7ba30b029cc38a9e4",
+	"lengths":30,
+	"precision":0,
+	"valid":true
+}

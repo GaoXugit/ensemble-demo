@@ -33,7 +33,7 @@ public class CdCardDao extends BaseDao {
     }
 
     /**
-     * 开卡功能的具体实现方法
+     * 开卡功能
      * @param password
      * @param username
      * @param document_id
@@ -51,5 +51,32 @@ public class CdCardDao extends BaseDao {
         da.setCreateTime(CREATE_TIME);
         da.setCardType(card_type);
         return super.selectOne(DEFAULT_NAME_SPACE, "insert", da);
+    }
+
+    /**
+     * 获取卡信息
+     * @param cdid
+     * @param pass
+     * @return
+     */
+
+    public CdCard getCardInfo(int cdid,String pass) {
+        CdCard cdCard = new CdCard();
+        cdCard.setCdId(cdid);
+        cdCard.setPassword(pass);
+        return super.selectOne(DEFAULT_NAME_SPACE, "selectCardInfo",cdCard);
+    }
+
+    /**
+     * 更新卡信息
+     * @param cdid
+     * @param temp
+     * @return
+     */
+    public int updateCardInfo(int cdid,BigDecimal temp) {
+        CdCard cdCard = new CdCard();
+        cdCard.setBal(temp);
+        cdCard.setCdId(cdid);
+        return super.update("updateCardInfo",cdCard);
     }
 }

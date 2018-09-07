@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dcits.ensemble.dbmanage.dao.BsDao">
+    <sql id="Base_Column_List" >
+        BS_ID, CD_ID, BS_TIME, DEPOSIT, WITHDRAWAL, PUT_WAY, SAVE_WAY
+    </sql>
+    <insert id="insert" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        insert into BS
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bsId != null">
+                BS_ID,
+            </if>
+            <if test="cdId != null">
+                CD_ID,
+            </if>
+            <if test="bsTime != null">
+                BS_TIME,
+            </if>
+            <if test="deposit != null">
+                DEPOSIT,
+            </if>
+            <if test="withdrawal != null">
+                WITHDRAWAL,
+            </if>
+            <if test="putWay != null">
+                PUT_WAY,
+            </if>
+            <if test="saveWay != null">
+                SAVE_WAY,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bsId != null">
+              #{bsId,jdbcType=INTEGER},
+            </if>
+            <if test="cdId != null">
+              #{cdId,jdbcType=INTEGER},
+            </if>
+            <if test="bsTime != null">
+              #{bsTime,jdbcType=VARCHAR},
+            </if>
+            <if test="deposit != null">
+              #{deposit,jdbcType=DECIMAL},
+            </if>
+            <if test="withdrawal != null">
+              #{withdrawal,jdbcType=DECIMAL},
+            </if>
+            <if test="putWay != null">
+              #{putWay,jdbcType=INTEGER},
+            </if>
+            <if test="saveWay != null">
+              #{saveWay,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs"
+            resultType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        select
+        <include refid="Base_Column_List" />
+          from BS
+         where BS_ID = #{bsId,jdbcType=INTEGER}
+    </select>
+    <update id="updateByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        update BS
+        <set>
+            <if test="cdId != null">
+                CD_ID = #{cdId,jdbcType=INTEGER},
+            </if>
+            <if test="bsTime != null">
+                BS_TIME = #{bsTime,jdbcType=VARCHAR},
+            </if>
+            <if test="deposit != null">
+                DEPOSIT = #{deposit,jdbcType=DECIMAL},
+            </if>
+            <if test="withdrawal != null">
+                WITHDRAWAL = #{withdrawal,jdbcType=DECIMAL},
+            </if>
+            <if test="putWay != null">
+                PUT_WAY = #{putWay,jdbcType=INTEGER},
+            </if>
+            <if test="saveWay != null">
+                SAVE_WAY = #{saveWay,jdbcType=INTEGER},
+            </if>
+        </set>
+         where BS_ID = #{bsId,jdbcType=INTEGER}
+    </update>
+    <delete id="deleteByPrimaryKey" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        delete from BS
+         where BS_ID = #{bsId,jdbcType=INTEGER}
+    </delete>
+    <insert id="insertBsInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        insert into BS(BS_ID,BS_DATE, CD_ID, BS_TIME, DEPOSIT, WITHDRAWAL, PUT_WAY, SAVE_WAY)
+        values (#{bsId,jdbcType=INTEGER},date_format(#{bsTime,jdbcType=VARCHAR},'%Y-%m-%d'),
+                #{cdId,jdbcType=INTEGER},
+                #{bsTime,jdbcType=VARCHAR},#{deposit,jdbcType=DECIMAL},
+                 #{withdrawal,jdbcType=DECIMAL},#{putWay,jdbcType=INTEGER},
+                 #{saveWay,jdbcType=INTEGER}
+                );
+    </insert>
+</mapper>
