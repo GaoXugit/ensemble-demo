@@ -13,6 +13,7 @@ import com.dcits.galaxy.business.dao.BaseDao;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /***
  * 卡表</br>
@@ -42,7 +43,7 @@ public class CdCardDao extends BaseDao {
      * @param card_type
      * @return
      */
-    public String insert(String password, String username,String document_id, BigDecimal BAL, String CREATE_TIME, int card_type){
+    public String insert(String password, String username, String document_id, BigDecimal BAL, String CREATE_TIME, int card_type){
         CdCard da = new CdCard();
         da.setPassword(password);
         da.setUserName(username);
