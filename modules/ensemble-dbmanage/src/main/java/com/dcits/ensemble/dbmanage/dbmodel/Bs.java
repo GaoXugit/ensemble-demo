@@ -186,4 +186,13 @@ public class Bs extends AbstractBean {
     public void setSaveWay(Integer saveWay) {
         this.saveWay = saveWay;
     }
+    @Override
+    public String toString() {
+        return  "流水信息["+
+                "银行卡号:" + cdId +
+                ", 存款发生额:" + deposit +
+                ", 取款发生额:" + withdrawal +
+                ", 取款地点:" + putWay +
+                ", 存款地点:" + saveWay +"]";
+    }
 }

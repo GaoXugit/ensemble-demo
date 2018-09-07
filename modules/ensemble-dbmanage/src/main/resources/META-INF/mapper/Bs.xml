@@ -106,4 +106,28 @@
         where CD_ID = #{cdId,jdbcType=INTEGER} and  BS_DATE  between  #{startDate,jdbcType=VARCHAR} and  #{endDate,jdbcType=VARCHAR}
     </select>
 
+    <!-- 取款业务的插入流水信息 -->
+    <insert id="insertCardInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        insert into BS
+        (BS_TIME,BS_DATE,CD_ID,DEPOSIT,WITHDRAWAL,PUT_WAY,SAVE_WAY)
+        values (#{bsTime,jdbcType=VARCHAR},date_format(#{bsTime,jdbcType=VARCHAR},'%Y-%m-%d'),#{cdId,jdbcType=INTEGER},#{deposit,jdbcType=DECIMAL},#{withdrawal,jdbcType=DECIMAL},#{putWay,jdbcType=INTEGER},#{saveWay,jdbcType=INTEGER})
+    </insert>
+    <!-- 存款业务的插入流水信息 -->
+    <insert id="insertCardInfos" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        insert into BS
+        (BS_TIME,BS_DATE,CD_ID,DEPOSIT,WITHDRAWAL,PUT_WAY,SAVE_WAY)
+        values (#{bsTime,jdbcType=VARCHAR},date_format(#{bsTime,jdbcType=VARCHAR},'%Y-%m-%d'),#{cdId,jdbcType=INTEGER},#{deposit,jdbcType=DECIMAL},#{withdrawal,jdbcType=DECIMAL},#{putWay,jdbcType=INTEGER},#{saveWay,jdbcType=INTEGER})
+    </insert>
+    <!-- 取款业务的查询本次流水信息 -->
+    <select id="selectBsInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs" resultType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        select BS_TIME,BS_DATE,CD_ID,DEPOSIT,WITHDRAWAL,PUT_WAY,SAVE_WAY
+        from BS
+        WHERE CD_ID = #{cdId,jdbcType=INTEGER} AND WITHDRAWAL = #{withdrawal,jdbcType=DECIMAL}
+    </select>
+    <!-- 存款业务的查询本次流水信息 -->
+    <select id="selectBsInfos" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs" resultType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
+        select BS_TIME,BS_DATE,CD_ID,DEPOSIT,WITHDRAWAL,PUT_WAY,SAVE_WAY
+        from BS
+        WHERE CD_ID = #{cdId,jdbcType=INTEGER} AND DEPOSIT = #{deposit,jdbcType=DECIMAL}
+    </select>
 </mapper>

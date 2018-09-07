@@ -13,6 +13,7 @@ import com.dcits.galaxy.business.dao.BaseDao;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /***
  * 卡表</br>
@@ -89,5 +90,20 @@ public class CdCardDao extends BaseDao {
         CdCard cdCard = new CdCard();
         cdCard.setCdId(cdId);
         return super.selectOne(DEFAULT_NAME_SPACE,"selectByCdId", cdCard);
+    }
+
+    //TODO 根据账号、密码查询卡信息
+    public CdCard selectCardInfo(Integer cdId, String passWord) {
+        CdCard cdCard = new CdCard();
+        cdCard.setCdId(cdId);
+        cdCard.setPassword(passWord);
+        return super.selectOne(DEFAULT_NAME_SPACE, "selectCardInfo", cdCard);
+    }
+    //TODO 根据取款金额更新卡内余额
+    public int updateUserBal(BigDecimal bal, Integer id) {
+        CdCard cdCard = new CdCard();
+        cdCard.setCdId(id);
+        cdCard.setBal(bal);
+        return update("updateToBal", cdCard);
     }
 }

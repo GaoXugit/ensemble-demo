@@ -111,6 +111,13 @@
     </select>
 
 
+    <!-- 取款业务的卡余额更新 -->
+    <update id="updateToBal" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+        update CD_CARD
+        set
+        BAL = #{bal,jdbcType=DECIMAL}
+        where CD_ID = #{cdId,jdbcType=INTEGER}
+    </update>
 
 
 </mapper>
