@@ -50,21 +50,21 @@ public class Core14008832 extends AbstractService implements ICore14008832 {
 
 	/**
 	 * TODO ****************8832取款流程*****************
-	 * TODO 1.根据上送输入的（账号，密码）查询卡信息、取款金额
+	 *  1.根据上送输入的（账号，密码）查询卡信息、取款金额
 	 *       if（账号&密码 != null）
-	 *       TODO 1.1（查询数据库是否有该信息 有：返回结果 没有：返回空）
+	 *        1.1（查询数据库是否有该信息 有：返回结果 没有：返回空）
 	 *       else
 	 *      （提示错误信息）
-	 * TODO 2.将输入的取款金额与账户余额进行校验
+	 *  2.将输入的取款金额与账户余额进行校验
 	 * 		 if(取款金额 <= 账户余额)
-	 * 		 TODO 2.1（可以取款---》取款完成，更新账户余额）
+	 * 		  2.1（可以取款---》取款完成，更新账户余额）
 	 * 		 else
 	 *      （余额不足，无法取款）
-	 * TODO 3.插入流水信息
-	 * 		 TODO 3.1将取款金额、卡号等信息插入到流水表
-	 * TODO 4.下送输出
-	 * 		 TODO 4.1 显示卡内信息，例如：姓名、余额等
-	 * 	     TODO 4.2 打印流水信息，例如：卡号、取款额度、取款时间等
+	 *  3.插入流水信息
+	 * 		  3.1将取款金额、卡号等信息插入到流水表
+	 *  4.下送输出
+	 * 		  4.1 显示卡内信息，例如：姓名、余额等
+	 * 	      4.2 打印流水信息，例如：卡号、取款额度、取款时间等
 	 */
 	@Override
 	public BeanResult putMoney(Core14008832In core14008832in) {
@@ -79,13 +79,11 @@ public class Core14008832 extends AbstractService implements ICore14008832 {
 		if (cdId != null  ){
 			if (passWord != null) {
 				if (sal != null && sal.compareTo(BigDecimal.ZERO)>0) {
-					//System.out.println("=============================================="+cdId+passWord);
-					//TODO 1.********************根据输入的账号，密码查询卡信息,返回一个CdCard对象********************
+					//1.根据输入的账号，密码查询卡信息,返回一个CdCard对象
 					CdCard cdCardInfo = cdCardDao.selectCardInfo(cdId, passWord);
-					//System.out.println("********************************************************"+cdCardDao.selectCardInfo(cdId,passWord));
 					//检测数据库是否存在该银行卡
 					if (cdCardInfo != null) {
-						//TODO 2.********************金额校验、取款业务********************
+						//2.金额校验、取款业务
 						//卡内余额大于等于取款金额
 						if (cdCardInfo.getBal().compareTo(sal) >= 0) {
 							//取款业务
@@ -94,19 +92,18 @@ public class Core14008832 extends AbstractService implements ICore14008832 {
 							if (i != 0) {
 								//取款成功，再次查询显示当前的卡信息（余额）
 								cdCardInfo = cdCardDao.selectCardInfo(cdId, passWord);
-								//TODO 3.********************取款插入流水信息********************
+								//3.取款插入流水信息
 								Bs bs = new Bs();
 								//设置流水的卡号
 								bs.setCdId(cdCardInfo.getCdId());
 								//设置流水的取款额度
 								bs.setWithdrawal(sal);
-								//flag=1 表示插入流水信息成功
+								//flag = 1 表示插入流水信息成功
 								int flag = bsDao.insertCardInfo(bs);
 								if (flag!=0) {
 									//查询显示本次取款的流水信息
 									Bs bs1 = bsDao.selectBsInfo(bs);
-
-									//TODO 4.******************下送输出********************
+									//4.下送输出
 									core14008832Out.setUserName("用户姓名：" + cdCardInfo.getUserName());
 									core14008832Out.setDocumentId("身份证号码：" + cdCardInfo.getDocumentId());
 									core14008832Out.setBal(cdCardInfo.getBal());
