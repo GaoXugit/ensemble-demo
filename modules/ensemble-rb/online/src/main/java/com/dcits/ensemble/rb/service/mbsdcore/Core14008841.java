@@ -25,6 +25,7 @@ import com.dcits.ensemble.rb.model.mbsdcore.Core14008841In;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /***
@@ -72,7 +73,7 @@ public class Core14008841 extends AbstractService implements ICore14008841 {
 		/**
 		 * 以下是对上送的字段的验证
 		 */
-		if (sal==null){
+		if (sal==null || sal.doubleValue()==0){
 			core14008841Out.setResultInfo("您输入的转账金额不正确");
 			return new BeanResult(core14008841Out);//返回报文信息
 		}
@@ -99,7 +100,7 @@ public class Core14008841 extends AbstractService implements ICore14008841 {
 			return new BeanResult(core14008841Out);//返回报文信息
 		}
 		if (cdcard_in ==null){
-			core14008841Out.setResultInfo("信息有误-》请核对好转账的账户信息");
+			core14008841Out.setResultInfo("信息有误-》请核对好转入的账户信息");
 			return new BeanResult(core14008841Out);//返回报文信息
 		}
 		BigDecimal bal = cdcard.getBal();//查询账户余额返回
@@ -120,19 +121,20 @@ public class Core14008841 extends AbstractService implements ICore14008841 {
 			if (!(result==1 && result1==1)){//两次操作都不成功
 				BigDecimal temp2 = bal.add(sal);
 				int result2 = cdCardDao.updateCardInfo(cdid,temp);
-				core14008841Out.setResultInfo("转账失败，金额已经退回");
+				core14008841Out.setResultInfo("转账失败，交易金额已经回滚");
+				bsDao.addStreamInfo(cdidin,salargs,salargs,0);
 				return new BeanResult(core14008841Out);//返回报文信息
 			}else {
 				/*
 				 * 转账成功在报文表里打印报文信息
 				 */
-				int result3 = bsDao.addStreamInfo(cdidin,salargs,sal,1);
-				int result4 = bsDao.addStreamInfo(cdid,sal,salargs,1);
+				int result3 = bsDao.addStreamInfo(cdidin,sal,salargs,0);
+				int result4 = bsDao.addStreamInfo(cdid,salargs,sal,0);
 				if (result3==1 && result4==1){
-					core14008841Out.setResultInfo("转账成功,用户:"+cdid+"  在"+new Date().toString()+"  转账"+sal+"钱");
+					core14008841Out.setResultInfo("转账成功,用户:"+cdid+"  在"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+"  转账"+sal+"元钱");
 					return new BeanResult(core14008841Out);//返回报文信息
 				}else{
-					core14008841Out.setResultInfo("转账成功，但报表打印失败");
+					core14008841Out.setResultInfo("转账成功,用户:"+cdid+"  在"+new Date().toString()+"  转账"+sal+"钱");
 					return new BeanResult(core14008841Out);//返回报文信息
 				}
 
