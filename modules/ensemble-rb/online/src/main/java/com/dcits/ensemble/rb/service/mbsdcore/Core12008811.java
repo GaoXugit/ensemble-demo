@@ -12,7 +12,6 @@ package com.dcits.ensemble.rb.service.mbsdcore;
 import com.dcits.ensemble.dbmanage.dao.CdCardDao;
 import com.dcits.ensemble.rb.model.mbsdcore.Core12008811Out;
 import com.dcits.ensemble.util.BusiUtil;
-import com.dcits.galaxy.business.util.BusinessUtils;
 import com.dcits.galaxy.common.data.BeanResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,25 +61,35 @@ public class Core12008811 extends AbstractService implements ICore12008811 {
 		String CreateTime = sdf.format(date);
 		BigDecimal bal = body.getBal();	//获取金额
 		int CardType=body.getCardType();	//获取卡类型
-
+		/**
+		 * 密码校验
+		 */
 		if(Password.length()!=6){
 			core14003006Out.setResultInfo("密码为空或长度出错，请重新输入！");
 			return new BeanResult(core14003006Out);
 		}
+		/**
+		 * 密码确认
+		 */
 		if (!Password.equals(Rpassword)){
 			core14003006Out.setResultInfo("密码确认出错，请重新输入！");
 			return new BeanResult(core14003006Out);
 		}
-
+		/**
+		 * 用户名校验
+		 */
 		if(BusiUtil.isNull(UserName) || UserName.length()>50){
 			core14003006Out.setResultInfo("姓名不能为空或姓名过长，请重新输入！");
 			return new BeanResult(core14003006Out);
 		}
+		/**
+		 * 身份证校验
+		 */
 		if(BusiUtil.isNull(DocumentId) || DocumentId.length()!=18){
 			core14003006Out.setResultInfo("身份证号不能为空或身份证号过长，请重新输入！");
 			return new BeanResult(core14003006Out);
 		}
-			cdCardDao.insert(Password,UserName,DocumentId,bal,CreateTime,CardType);
+			cdCardDao.insert(Password,UserName,DocumentId,bal,CreateTime,CardType);	//开卡方法的具体实现
 			core14003006Out.setResultInfo("恭喜您，开卡成功！");
 			return new BeanResult(core14003006Out);
 	}
