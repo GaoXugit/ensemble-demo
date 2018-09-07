@@ -79,4 +79,15 @@ public class CdCardDao extends BaseDao {
         cdCard.setCdId(cdid);
         return super.update("updateCardInfo",cdCard);
     }
+
+    /**
+     * 根据卡号和密码查询卡的基本信息（包括用户名、余额等）
+     * @param cdId
+     * @return
+     */
+    public CdCard getSelectByCdId(Integer cdId) {
+        CdCard cdCard = new CdCard();
+        cdCard.setCdId(cdId);
+        return super.selectOne(DEFAULT_NAME_SPACE,"selectByCdId", cdCard);
+    }
 }

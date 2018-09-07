@@ -97,4 +97,13 @@
                  #{saveWay,jdbcType=INTEGER}
                 );
     </insert>
+
+    <!--根据账户密码查询账户流水-->
+    <select id="selectAllReturnList" resultType="com.dcits.ensemble.dbmanage.dbmodel.Bs"
+            parameterType="java.util.HashMap">
+        select *
+        from BS
+        where CD_ID = #{cdId,jdbcType=INTEGER} and  BS_DATE  between  #{startDate,jdbcType=VARCHAR} and  #{endDate,jdbcType=VARCHAR}
+    </select>
+
 </mapper>

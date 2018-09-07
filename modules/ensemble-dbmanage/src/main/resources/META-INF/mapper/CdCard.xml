@@ -103,6 +103,14 @@
         where CD_ID = #{cdId,jdbcType=INTEGER}
     </update>
 
+    <!-- 根据账号密码查询账户信息 -->
+    <select id="selectByCdId" resultType="com.dcits.ensemble.dbmanage.dbmodel.CdCard" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+      select *
+      from CD_CARD
+      where CD_ID=#{cdId,jdbcType=INTEGER}
+    </select>
+
+
 
 
 </mapper>

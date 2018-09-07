@@ -192,6 +192,38 @@
 		"valid":true
 	},
 	{
+		"argsClazz":"com.dcits.ensemble.rb.model.mbsdcore.Core14008821In",
+		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
+		"atomicServiceType":"ATOM",
+		"clazz":"com.dcits.ensemble.rb.service.mbsdcore.Core14008821",
+		"groupName":"DEFAULT",
+		"id":"eec4641d618743a3b32021670d570e7f",
+		"identify":"根据账号密码查询余额服务",
+		"inArgType":"com.dcits.ensemble.rb.model.mbsdcore.Core14008821In",
+		"method":"queryCdIdPassWord",
+		"methodName":"queryCdIdPassWord",
+		"name":"根据账号密码查询余额服务",
+		"serviceType":"SPRING BEAN",
+		"type":"atom",
+		"valid":true
+	},
+	{
+		"argsClazz":"com.dcits.ensemble.rb.model.mbsdcore.Core14008822In",
+		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
+		"atomicServiceType":"ATOM",
+		"clazz":"com.dcits.ensemble.rb.service.mbsdcore.Core14008822",
+		"groupName":"DEFAULT",
+		"id":"929ffa6af43f444badddb586e3f44267",
+		"identify":"根据账号密码起止时间查询账号流水",
+		"inArgType":"com.dcits.ensemble.rb.model.mbsdcore.Core14008822In",
+		"method":"queryCdIdInfoBS",
+		"methodName":"queryCdIdInfoBS",
+		"name":"根据账号密码起止时间查询账号流水",
+		"serviceType":"SPRING BEAN",
+		"type":"atom",
+		"valid":true
+	},
+	{
 		"argsClazz":"java.lang.String",
 		"atomicServiceGroupId":"0e2c0471861e42e6ab4b5ee5f5dae3ea",
 		"atomicServiceType":"CHECK",
