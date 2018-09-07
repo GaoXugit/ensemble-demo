@@ -15,6 +15,8 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 /***
  * 银行流水账单</br>
@@ -89,6 +91,21 @@ public class BsDao extends BaseDao {
     //TODO 存款查询流水信息
     public Bs selectBsInfos(Bs bs) {
         return super.selectOne(DEFAULT_NAME_SPACE, "selectBsInfos", bs);
+    }
+
+    /**
+     * 根据账户密码查询账户流水
+     * @param cdId
+     * @param startDate
+     * @param endDate
+     * @return
+     */
+    public List<Bs> getSelectAll(Integer cdId, String startDate, String endDate) {
+        HashMap<Object,Object> map= new HashMap<>();
+        map.put("cdId",cdId);
+        map.put("startDate",startDate);
+        map.put("endDate",endDate);
+        return selectList("selectAllReturnList",map);
     }
 
 }

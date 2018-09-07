@@ -88,7 +88,6 @@
         delete from BS
          where BS_ID = #{bsId,jdbcType=INTEGER}
     </delete>
-    <!-- 转账业务的插入流水信息 -->
     <insert id="insertBsInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
         insert into BS(BS_ID,BS_DATE, CD_ID, BS_TIME, DEPOSIT, WITHDRAWAL, PUT_WAY, SAVE_WAY)
         values (#{bsId,jdbcType=INTEGER},date_format(#{bsTime,jdbcType=VARCHAR},'%Y-%m-%d'),
@@ -98,6 +97,15 @@
                  #{saveWay,jdbcType=INTEGER}
                 );
     </insert>
+
+    <!--根据账户密码查询账户流水-->
+    <select id="selectAllReturnList" resultType="com.dcits.ensemble.dbmanage.dbmodel.Bs"
+            parameterType="java.util.HashMap">
+        select *
+        from BS
+        where CD_ID = #{cdId,jdbcType=INTEGER} and  BS_DATE  between  #{startDate,jdbcType=VARCHAR} and  #{endDate,jdbcType=VARCHAR}
+    </select>
+
     <!-- 取款业务的插入流水信息 -->
     <insert id="insertCardInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.Bs">
         insert into BS

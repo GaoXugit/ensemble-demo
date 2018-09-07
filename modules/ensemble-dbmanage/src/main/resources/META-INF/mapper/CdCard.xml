@@ -91,7 +91,7 @@
     </delete>
 
 
-    <!-- 卡信息查询-->
+    <!-- 转账业务所需的卡信息查询-->
     <select id="selectCardInfo" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard" resultType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
         select CD_ID, PASSWORD, USER_NAME, DOCUMENT_ID, BAL, CREATE_TIME, CARD_TYPE
         from CD_CARD
@@ -102,6 +102,14 @@
         update CD_CARD  set BAL=#{bal,jdbcType=DOUBLE}
         where CD_ID = #{cdId,jdbcType=INTEGER}
     </update>
+
+    <!-- 根据账号密码查询账户信息 -->
+    <select id="selectByCdId" resultType="com.dcits.ensemble.dbmanage.dbmodel.CdCard" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">
+      select *
+      from CD_CARD
+      where CD_ID=#{cdId,jdbcType=INTEGER}
+    </select>
+
 
     <!-- 取款业务的卡余额更新 -->
     <update id="updateToBal" parameterType="com.dcits.ensemble.dbmanage.dbmodel.CdCard">

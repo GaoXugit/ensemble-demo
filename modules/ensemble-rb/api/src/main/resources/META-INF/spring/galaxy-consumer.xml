@@ -68,4 +68,12 @@
 	<dcits:reference id="MbsdCore-1400-8833"
 		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008833" check="false">
 	</dcits:reference>
+    <!-- 查询余额服务 -->
+	<dcits:reference id="MbsdCore-1400-8821"
+		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008821" check="false">
+	</dcits:reference>
+    <!-- 查询流水服务 -->
+	<dcits:reference id="MbsdCore-1400-8822"
+		             interface="com.dcits.ensemble.rb.api.mbsdcore.ICore14008822" check="false">
+	</dcits:reference>
 </beans>

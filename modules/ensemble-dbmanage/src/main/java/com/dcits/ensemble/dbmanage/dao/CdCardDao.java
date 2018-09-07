@@ -43,7 +43,7 @@ public class CdCardDao extends BaseDao {
      * @param card_type
      * @return
      */
-    public String insert(String password, String username, String document_id, BigDecimal BAL, String CREATE_TIME, int card_type){
+    public String insert(String password, String username,String document_id, BigDecimal BAL, String CREATE_TIME, int card_type){
         CdCard da = new CdCard();
         da.setPassword(password);
         da.setUserName(username);
@@ -79,6 +79,17 @@ public class CdCardDao extends BaseDao {
         cdCard.setBal(temp);
         cdCard.setCdId(cdid);
         return super.update("updateCardInfo",cdCard);
+    }
+
+    /**
+     * 根据卡号和密码查询卡的基本信息（包括用户名、余额等）
+     * @param cdId
+     * @return
+     */
+    public CdCard getSelectByCdId(Integer cdId) {
+        CdCard cdCard = new CdCard();
+        cdCard.setCdId(cdId);
+        return super.selectOne(DEFAULT_NAME_SPACE,"selectByCdId", cdCard);
     }
 
     //TODO 根据账号、密码查询卡信息
