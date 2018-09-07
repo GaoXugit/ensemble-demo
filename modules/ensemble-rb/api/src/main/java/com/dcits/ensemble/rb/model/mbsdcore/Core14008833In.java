@@ -3,7 +3,7 @@
  * <p>Description: 存款服务</p>
  * <p>Copyright: Copyright (c) 2014-2018</p>
  * <p>Company: dcits</p>
- * <p>2018-09-07 10:13:23</p>
+ * <p>2018-09-07 11:25:42</p>
  * @author 
  * @version v1.0
  */
@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 
 /***
  * 存款服务</br>
- * 2018-09-07 10:13:23
+ * 2018-09-07 11:25:42
  *
  * @version v1.0
  * @since v1.0
@@ -73,7 +73,7 @@ public class Core14008833In extends Request {
 		 * scale:0<br>
 		 * cons:
 		 */
-        @V(desc = "密码", notNull = true)
+        @V(desc = "密码", notNull = true, minSize = 6, maxSize = 6)
 		private String password;
 
 		/**
