@@ -103,7 +103,7 @@
             parameterType="java.util.HashMap">
         select *
         from BS
-        where CD_ID = #{cdId,jdbcType=INTEGER} and  BS_DATE  between  #{startDate,jdbcType=VARCHAR} and  #{endDate,jdbcType=VARCHAR}
+        where BS_DATE  between  #{startDate,jdbcType=VARCHAR} and  #{endDate,jdbcType=VARCHAR} and  CD_ID = #{cdId,jdbcType=INTEGER}
     </select>
 
     <!-- 取款业务的插入流水信息 -->

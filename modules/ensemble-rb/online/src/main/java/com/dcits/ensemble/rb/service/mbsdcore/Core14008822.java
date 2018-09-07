@@ -31,6 +31,8 @@ import sun.font.BidiUtils;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -77,12 +79,7 @@ public class Core14008822 extends AbstractService implements ICore14008822 {
 		CdCard cdCard = cdCardDao.getSelectByCdId(cdId);
 		List<Core14008822Out.Array> arrayList = new ArrayList<>();
 		Core14008822Out.Array array = new Core14008822Out.Array();
-		//判断账号是否存在
-		if (!BusiUtil.isNotNull(cdCard)){
-			array.setBsTime("账号不存在，请核对后重新输入！");
-			arrayList.add(array);
-			return new BeanResult(core14008822Out);
-		}
+
 		//判断密码输入是否正确
 		if (!passWord.equals(cdCard.getPassword())) {
 			array.setBsTime("密码输入错误，请核对后重新操作！");
@@ -91,20 +88,27 @@ public class Core14008822 extends AbstractService implements ICore14008822 {
 		}
 		//判断输入的起止日期格式是否正确
 		if (startDate.length() != 8 || endDate.length() != 8) {
-			array.setBsTime("起止日期输入错误，请输入八位数字");
+			array.setBsTime("起止日期输入错误，请输入八位数字"+startDate.compareTo(endDate));
+			arrayList.add(array);
+			return new BeanResult(core14008822Out);
+		}
+		//判断输入的起止日期是否合法
+		if(startDate.compareTo(endDate)==0){
+			array.setBsTime("日期输入不合法，起始日期不能大于终止日期！");
 			arrayList.add(array);
 			return new BeanResult(core14008822Out);
 		}
 		List<Bs> list = bsDao.getSelectAll(cdId, startDate, endDate);
 		//遍历list数组
 		for (Bs bs : list) {
-			array.setBsId(bs.getBsId());
-			array.setBsTime(bs.getBsTime());
-			array.setDeposit(bs.getDeposit());
-			array.setPutWay(bs.getPutWay());
-			array.setSaveWay(bs.getSaveWay());
-			array.setWithdrawal(bs.getWithdrawal());
-			arrayList.add(array);
+			Core14008822Out.Array array1 = new Core14008822Out.Array();
+			array1.setBsId(bs.getBsId());
+			array1.setBsTime(bs.getBsTime());
+			array1.setDeposit(bs.getDeposit());
+			array1.setPutWay(bs.getPutWay());
+			array1.setSaveWay(bs.getSaveWay());
+			array1.setWithdrawal(bs.getWithdrawal());
+			arrayList.add(array1);
 		}
 		core14008822Out.setArray(arrayList);
 		return new BeanResult(core14008822Out);
