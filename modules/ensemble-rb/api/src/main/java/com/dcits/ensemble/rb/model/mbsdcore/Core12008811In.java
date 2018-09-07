@@ -65,6 +65,20 @@ public class Core12008811In extends Request {
 		private String password;
 
 		/**
+		 * 确认密码
+		 */
+		@V(desc = "密码", notNull = true)
+		private String Rpassword;
+
+		public String getRpassword() {
+			return Rpassword;
+		}
+
+		public void setRpassword(String rpassword) {
+			Rpassword = rpassword;
+		}
+
+		/**
 		 * 客户姓名<br>
 		 * USER_NAME<br>
 		 * seqNo:2<br>
@@ -100,17 +114,6 @@ public class Core12008811In extends Request {
         @V(desc = "余额", notNull = true)
 		private BigDecimal bal;
 
-		/**
-		 * 创建时间<br>
-		 * CREATE_TIME<br>
-		 * seqNo:5<br>
-		 * dataType:String<br>
-		 * length:17<br>
-		 * scale:0<br>
-		 * cons:
-		 */
-        @V(desc = "创建时间", notNull = true)
-		private String createTime;
 
 		/**
 		 * 卡种类<br>
@@ -188,21 +191,6 @@ public class Core12008811In extends Request {
 			this.bal = bal;
 		}
 
-		/**
-		 * 创建时间<br>
-		 * CREATE_TIME
-		 */
-		public String getCreateTime() {
-			return createTime;
-		}
-
-		/**
-		 * 创建时间<br>
-		 * CREATE_TIME
-		 */
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
 
 		/**
 		 * 卡种类<br>
